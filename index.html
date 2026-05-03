@@ -418,14 +418,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: center;
     padding: 20px;
     position: relative;
-    transition: background 0.2s;
+    transition: all 0.3s;
+    overflow: hidden;
   }
 
-  .brand-product-cell:hover { background: var(--accent-light); }
+  .brand-product-cell:hover { transform: scale(1.02); }
+
+  .brand-product-cell img.brand-product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .brand-product-cell .cell-overlay {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.92);
+    padding: 8px 12px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
 
   .brand-product-cell .cell-name {
     font-family: 'Playfair Display', serif;
@@ -1081,47 +1101,71 @@
     </div>
     <div class="brand-products-grid">
       <div class="brand-product-cell">
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/rayon-lined-midi-dress-Florine.jpg?v=1777784290" alt="Florine Midi Dress">
         <span class="limited">LIMITED</span>
-        <div class="cell-name">Florine Midi Dress</div>
-        <div class="cell-price">€260</div>
-        <div class="cell-fabric">Upcycled Silk</div>
+        <div class="cell-overlay">
+          <div class="cell-name">Florine Midi Dress</div>
+          <div class="cell-price">€260</div>
+          <div class="cell-fabric">Upcycled Silk</div>
+        </div>
       </div>
       <div class="brand-product-cell">
-        <div class="cell-name">Blanche Jacket</div>
-        <div class="cell-price">€220</div>
-        <div class="cell-fabric">Wool</div>
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/Blanche-light-pink_4f918fa4-d637-44cb-ad44-2ed8adf52dd0.jpg?v=1777794488" alt="Blanche Jacket">
+        <div class="cell-overlay">
+          <div class="cell-name">Blanche Jacket</div>
+          <div class="cell-price">€220</div>
+          <div class="cell-fabric">Wool</div>
+        </div>
       </div>
       <div class="brand-product-cell">
-        <div class="cell-name">Priscilla Midi Dress</div>
-        <div class="cell-price">€280</div>
-        <div class="cell-fabric">Cotton</div>
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/white-polka-dot-cotton-midi-dress-with-sweetheart-neckline_81c17479-c607-4e75-b12b-8d158859f090.jpg?v=1777553634" alt="Priscilla Midi Dress">
+        <div class="cell-overlay">
+          <div class="cell-name">Priscilla Midi Dress</div>
+          <div class="cell-price">€280</div>
+          <div class="cell-fabric">Cotton</div>
+        </div>
       </div>
       <div class="brand-product-cell">
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/black-viscose-knitted-midi-dress.jpg?v=1777783620" alt="Catherine Dress">
         <span class="limited">LIMITED</span>
-        <div class="cell-name">Catherine Dress</div>
-        <div class="cell-price">€290</div>
-        <div class="cell-fabric">Upcycled Silk</div>
+        <div class="cell-overlay">
+          <div class="cell-name">Catherine Dress</div>
+          <div class="cell-price">€290</div>
+          <div class="cell-fabric">Viscose</div>
+        </div>
       </div>
       <div class="brand-product-cell">
-        <div class="cell-name">Sybella Jacket</div>
-        <div class="cell-price">€210</div>
-        <div class="cell-fabric">Tweed</div>
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/beige-fishbone-tencel-linen-short-sleeve-jacket-and-wide-leg-pants-with-elastic.jpg?v=1777789485" alt="Sybella Pants">
+        <div class="cell-overlay">
+          <div class="cell-name">Sybella Pants</div>
+          <div class="cell-price">€185</div>
+          <div class="cell-fabric">Tencel Linen</div>
+        </div>
       </div>
       <div class="brand-product-cell">
-        <div class="cell-name">Blanche Skirt</div>
-        <div class="cell-price">€145</div>
-        <div class="cell-fabric">Wool</div>
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/Green-blue-floral-blouse.jpg?v=1777785010" alt="Eda Cotton Blouse">
+        <div class="cell-overlay">
+          <div class="cell-name">Eda Cotton Blouse</div>
+          <div class="cell-price">€155</div>
+          <div class="cell-fabric">Cotton</div>
+        </div>
       </div>
       <div class="brand-product-cell">
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/Cream-red-floral-Fleur-mini-dress.jpg?v=1777783936" alt="Fleur Mini Dress">
         <span class="limited">LIMITED</span>
-        <div class="cell-name">Fleur Mini Dress</div>
-        <div class="cell-price">€250</div>
-        <div class="cell-fabric">Silk</div>
+        <div class="cell-overlay">
+          <div class="cell-name">Fleur Mini Dress</div>
+          <div class="cell-price">€250</div>
+          <div class="cell-fabric">Silk</div>
+        </div>
       </div>
       <div class="brand-product-cell">
-        <div class="cell-name">Stephanie Cotton Dress</div>
-        <div class="cell-price">€260</div>
-        <div class="cell-fabric">Cotton</div>
+        <img class="brand-product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/red-with-hearts-cotton-midi-dress-volant-skirt.jpg?v=1777781597" alt="Stephanie Cotton Dress">
+        <div class="cell-overlay">
+          <div class="cell-name">Stephanie Cotton Dress</div>
+          <div class="cell-price">€260</div>
+          <div class="cell-fabric">Cotton</div>
+        </div>
       </div>
     </div>
   </div>

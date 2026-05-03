@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaâla Paris × Get The Fit — Imagine Your Brand Here</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --deep: #1a1a1a;
+    --accent: #7C3AED;
+    --accent-light: #EDE9FE;
+    --gold: #C9A96E;
+    --rose: #F5E6E0;
+    --gaala-beige: #F5F0EB;
+    --gaala-text: #2D2926;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--deep);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    background: linear-gradient(135deg, #FAF7F2 0%, #EDE9FE 50%, #F5E6E0 100%);
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(124,58,237,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(201,169,110,0.08) 0%, transparent 60%);
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.15);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--gaala-text);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--deep);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta:hover { background: var(--accent); transform: translateY(-2px); }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  /* ===== AI DISCOVERY MOCKUP ===== */
+  .ai-discovery {
+    background: white;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-discovery::after {
+    content: 'LIVE PREVIEW';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .search-mockup {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .search-mockup h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .search-mockup .tagline {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 24px;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 14px 20px;
+    gap: 12px;
+    transition: border-color 0.3s;
+  }
+
+  .search-bar:hover { border-color: var(--accent); }
+
+  .search-bar .camera { font-size: 20px; opacity: 0.4; }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    color: var(--deep);
+  }
+
+  .search-bar .submit {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .search-bar .submit:hover { background: #6D28D9; }
+
+  .pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .pill {
+    padding: 8px 18px;
+    background: var(--accent-light);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .pill:hover { background: var(--accent); color: white; }
+  .pill.active { background: var(--accent); color: white; }
+
+  /* Search result mockup */
+  .search-result {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover { transform: translateY(-4px); }
+
+  .product-card .img-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--gaala-beige), var(--rose));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card .img-placeholder img.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .product-card .img-placeholder .product-name-overlay {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--gaala-text);
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+    display: none;
+  }
+
+  .product-card .img-placeholder .product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .product-card .vibe-tag {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(124,58,237,0.9);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .product-card .card-info {
+    padding: 16px;
+  }
+
+  .product-card .card-info .brand-name {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .product-card .card-info h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .product-card .card-info .price {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gaala-text);
+  }
+
+  .product-card .card-info .price .converted {
+    font-weight: 400;
+    color: #999;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  /* ===== BRAND PAGE MOCKUP ===== */
+  .brand-page-mockup {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  }
+
+  .brand-hero {
+    background: linear-gradient(135deg, var(--gaala-beige), #E8DDD5);
+    padding: 60px 48px;
+    text-align: center;
+    position: relative;
+  }
+
+  .brand-hero .brand-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--gaala-text);
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+  }
+
+  .brand-hero .brand-tagline {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .brand-hero .brand-location {
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .brand-hero .brand-vibes {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .brand-hero .brand-vibes span {
+    padding: 6px 14px;
+    background: rgba(124,58,237,0.08);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .brand-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #eee;
+  }
+
+  .brand-product-cell {
+    background: white;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .brand-product-cell:hover { background: var(--accent-light); }
+
+  .brand-product-cell .cell-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--gaala-text);
+    margin-bottom: 4px;
+  }
+
+  .brand-product-cell .cell-price {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .brand-product-cell .cell-fabric {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .brand-product-cell .limited {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--gold);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  /* ===== UGC + SHOPPABLE ===== */
+  .ugc-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .ugc-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+
+  .ugc-video-placeholder {
+    aspect-ratio: 9/16;
+    background: linear-gradient(135deg, #2D2926, #4A4540);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ugc-video-placeholder .play-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    backdrop-filter: blur(10px);
+  }
+
+  .ugc-video-placeholder .shop-overlay {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ugc-video-placeholder .shop-overlay .product-thumb {
+    width: 48px;
+    height: 48px;
+    background: var(--gaala-beige);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #aaa;
+  }
+
+  .ugc-video-placeholder .shop-overlay .shop-info {
+    flex: 1;
+  }
+
+  .ugc-video-placeholder .shop-overlay .shop-info .shop-product-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--deep);
+  }
+
+  .ugc-video-placeholder .shop-overlay .shop-info .shop-price {
+    font-size: 11px;
+    color: #888;
+  }
+
+  .ugc-video-placeholder .shop-overlay .shop-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .ugc-creator {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ugc-creator .avatar {
+    width: 28px;
+    height: 28px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .ugc-creator .creator-name {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* ===== OUTFIT CREATOR ===== */
+  .outfit-mockup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .outfit-left {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  }
+
+  .outfit-left h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .outfit-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .outfit-item:last-child { border-bottom: none; }
+
+  .outfit-item .outfit-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    background: var(--accent);
+  }
+
+  .outfit-item .outfit-thumb {
+    width: 56px;
+    height: 72px;
+    background: var(--gaala-beige);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  .outfit-item .outfit-details {
+    flex: 1;
+  }
+
+  .outfit-item .outfit-details .outfit-brand {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .outfit-item .outfit-details .outfit-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .outfit-item .outfit-details .outfit-price {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .outfit-right {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .try-on-placeholder {
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--gaala-beige), var(--rose));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .try-on-placeholder .try-on-icon {
+    font-size: 48px;
+    opacity: 0.3;
+  }
+
+  .try-on-placeholder .try-on-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gaala-text);
+  }
+
+  .try-on-placeholder .try-on-sub {
+    font-size: 13px;
+    color: #888;
+    max-width: 200px;
+  }
+
+  .try-on-btn-bar {
+    padding: 20px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .try-on-btn-bar button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .try-on-btn-bar .btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+  }
+
+  .try-on-btn-bar .btn-primary:hover { background: #6D28D9; }
+
+  .try-on-btn-bar .btn-secondary {
+    background: white;
+    color: var(--deep);
+    border: 2px solid #ddd;
+  }
+
+  /* ===== VIBE TAGGING ===== */
+  .vibe-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .vibe-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+
+  .vibe-card:hover { transform: translateY(-4px); }
+
+  .vibe-card-header {
+    padding: 24px;
+    background: linear-gradient(135deg, var(--accent-light), #F5E6E0);
+    text-align: center;
+  }
+
+  .vibe-card-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .vibe-card-header .vibe-score {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .vibe-card-products {
+    padding: 16px;
+  }
+
+  .vibe-product-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .vibe-product-row:last-child { border-bottom: none; }
+
+  .vibe-product-row .rank {
+    width: 24px;
+    height: 24px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .vibe-product-row .vp-name { font-size: 13px; flex: 1; }
+  .vibe-product-row .vp-price { font-size: 12px; font-weight: 600; color: #888; }
+
+  /* ===== BRAND DASHBOARD ===== */
+  .dashboard-mockup {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 32px;
+    color: white;
+  }
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  .dashboard-header .dash-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+  }
+
+  .dashboard-header .dash-status {
+    font-size: 12px;
+    padding: 6px 14px;
+    background: rgba(34,197,94,0.15);
+    color: #22C55E;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    background: #252525;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .stat-card .stat-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .stat-card .stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .stat-card .stat-change {
+    font-size: 11px;
+    color: #22C55E;
+    margin-top: 4px;
+  }
+
+  .dashboard-chart {
+    background: #252525;
+    border-radius: 12px;
+    padding: 24px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .chart-bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--accent), rgba(124,58,237,0.3));
+    border-radius: 4px 4px 0 0;
+    min-height: 20px;
+    transition: height 0.5s ease;
+  }
+
+  /* ===== GLOBAL REACH ===== */
+  .reach-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .reach-stat {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+
+  .reach-stat .flag { font-size: 36px; margin-bottom: 12px; }
+  .reach-stat .city {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .reach-stat .customers { font-size: 13px; color: #888; }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    text-align: center;
+    padding: 100px 24px;
+    background: linear-gradient(135deg, var(--deep), #2D1B69);
+    color: white;
+    border-radius: 24px;
+    margin: 40px 24px;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 18px 56px;
+    background: white;
+    color: var(--deep);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+  .cta-button:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+
+  .cta-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .search-result { grid-template-columns: 1fr; }
+    .brand-products-grid { grid-template-columns: repeat(2, 1fr); }
+    .ugc-section { grid-template-columns: 1fr; }
+    .outfit-mockup { grid-template-columns: 1fr; }
+    .vibe-showcase { grid-template-columns: 1fr; }
+    .dashboard-stats { grid-template-columns: repeat(2, 1fr); }
+    .reach-stats { grid-template-columns: repeat(2, 1fr); }
+    .ai-discovery { padding: 24px; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Exclusive Preview for Gaâla Paris</div>
+    <h1>Imagine <em>Gaâla</em> on<br>Get The Fit</h1>
+    <p>Your sustainable Parisian pieces — discovered by customers worldwide through AI-powered search, styled into outfits, and tried on virtually. Here's exactly how it would work.</p>
+    <a href="#discovery" class="hero-cta">SEE THE EXPERIENCE ↓</a>
+  </div>
+</div>
+
+<!-- SECTION 1: AI DISCOVERY -->
+<section id="discovery" class="fade-in">
+  <div class="section-label">01 — AI Discovery</div>
+  <div class="section-title">Your pieces, found by AI</div>
+  <div class="section-desc">When a customer types "Parisian vintage dress for summer" — your Florine Midi Dress appears. Our AI understands style, not just keywords.</div>
+
+  <div class="ai-discovery">
+    <div class="search-mockup">
+      <h3>What do you want to dream up today?</h3>
+      <div class="tagline">AI-powered discovery that actually gets you.</div>
+
+      <div class="search-bar">
+        <span class="camera">📷</span>
+        <input type="text" value="elegant Parisian dress for Dubai brunch" readonly>
+        <button class="submit">→</button>
+      </div>
+
+      <div class="pills">
+        <span class="pill active">Parisian Elegance</span>
+        <span class="pill">Sustainable Luxury</span>
+        <span class="pill">French Riviera</span>
+        <span class="pill">Old Money</span>
+        <span class="pill">Vintage Charm</span>
+      </div>
+
+      <div class="search-result">
+        <div class="product-card">
+          <div class="img-placeholder">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/white-polka-dot-cotton-midi-dress-with-sweetheart-neckline_81c17479-c607-4e75-b12b-8d158859f090.jpg?v=1777553634" alt="Priscilla Midi Dress">
+            <span class="product-tag">GAÂLA</span>
+            <span class="vibe-tag">Old Money</span>
+          </div>
+          <div class="card-info">
+            <div class="brand-name">Gaâla Paris</div>
+            <h4>Priscilla Midi Dress</h4>
+            <div class="price">€280 <span class="converted">(~AED 1,120)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="img-placeholder">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/black-viscose-knitted-midi-dress.jpg?v=1777783620" alt="Catherine Dress">
+            <span class="product-tag">GAÂLA</span>
+            <span class="vibe-tag">Elegant</span>
+          </div>
+          <div class="card-info">
+            <div class="brand-name">Gaâla Paris</div>
+            <h4>Catherine Dress</h4>
+            <div class="price">€290 <span class="converted">(~AED 1,160)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="img-placeholder">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0275/7761/4381/files/rayon-lined-midi-dress-Florine.jpg?v=1777784290" alt="Florine Midi Dress">
+            <span class="product-tag">GAÂLA</span>
+            <span class="vibe-tag">Romantic</span>
+          </div>
+          <div class="card-info">
+            <div class="brand-name">Gaâla Paris</div>
+            <h4>Florine Midi Dress</h4>
+            <div class="price">€260 <span class="converted">(~AED 1,040)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: YOUR BRAND PAGE -->
+<section class="fade-in">
+  <div class="section-label">02 — Your Brand Page</div>
+  <div class="section-title">A dedicated home for Gaâla</div>
+  <div class="section-desc">Your own curated page. Your story, your aesthetic, your products — tagged with vibes that match your DNA.</div>
+
+  <div class="brand-page-mockup">
+    <div class="brand-hero">
+      <div class="brand-logo-text">GAÂLA</div>
+      <div class="brand-tagline">Sustainable Luxury French Womenswear</div>
+      <div class="brand-location">📍 Paris, France · Founded 2019 · 477 pieces</div>
+      <div class="brand-vibes">
+        <span>Old Money</span>
+        <span>Elegant</span>
+        <span>Romantic</span>
+        <span>Unique Finds</span>
+      </div>
+    </div>
+    <div class="brand-products-grid">
+      <div class="brand-product-cell">
+        <span class="limited">LIMITED</span>
+        <div class="cell-name">Florine Midi Dress</div>
+        <div class="cell-price">€260</div>
+        <div class="cell-fabric">Upcycled Silk</div>
+      </div>
+      <div class="brand-product-cell">
+        <div class="cell-name">Blanche Jacket</div>
+        <div class="cell-price">€220</div>
+        <div class="cell-fabric">Wool</div>
+      </div>
+      <div class="brand-product-cell">
+        <div class="cell-name">Priscilla Midi Dress</div>
+        <div class="cell-price">€280</div>
+        <div class="cell-fabric">Cotton</div>
+      </div>
+      <div class="brand-product-cell">
+        <span class="limited">LIMITED</span>
+        <div class="cell-name">Catherine Dress</div>
+        <div class="cell-price">€290</div>
+        <div class="cell-fabric">Upcycled Silk</div>
+      </div>
+      <div class="brand-product-cell">
+        <div class="cell-name">Sybella Jacket</div>
+        <div class="cell-price">€210</div>
+        <div class="cell-fabric">Tweed</div>
+      </div>
+      <div class="brand-product-cell">
+        <div class="cell-name">Blanche Skirt</div>
+        <div class="cell-price">€145</div>
+        <div class="cell-fabric">Wool</div>
+      </div>
+      <div class="brand-product-cell">
+        <span class="limited">LIMITED</span>
+        <div class="cell-name">Fleur Mini Dress</div>
+        <div class="cell-price">€250</div>
+        <div class="cell-fabric">Silk</div>
+      </div>
+      <div class="brand-product-cell">
+        <div class="cell-name">Stephanie Cotton Dress</div>
+        <div class="cell-price">€260</div>
+        <div class="cell-fabric">Cotton</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 3: UGC SHOPPABLE -->
+<section class="fade-in">
+  <div class="section-label">03 — Shoppable UGC</div>
+  <div class="section-title">Your pieces in motion</div>
+  <div class="section-desc">User-generated videos featuring Gaâla — with shop buttons that link directly to the product page. Real people, real style, real conversion.</div>
+
+  <div class="ugc-section">
+    <div class="ugc-card">
+      <div class="ugc-video-placeholder">
+        <div class="play-btn">▶</div>
+        <div class="shop-overlay">
+          <div class="product-thumb">Florine</div>
+          <div class="shop-info">
+            <div class="shop-product-name">Florine Midi Dress</div>
+            <div class="shop-price">€260 · Cream with hearts</div>
+          </div>
+          <button class="shop-btn">SHOP</button>
+        </div>
+      </div>
+      <div class="ugc-creator">
+        <div class="avatar">S</div>
+        <span class="creator-name">@sarah_styles_paris</span>
+      </div>
+    </div>
+
+    <div class="ugc-card">
+      <div class="ugc-video-placeholder" style="background: linear-gradient(135deg, #4A4540, #2D2926);">
+        <div class="play-btn">▶</div>
+        <div class="shop-overlay">
+          <div class="product-thumb">Blanche</div>
+          <div class="shop-info">
+            <div class="shop-product-name">Blanche Jacket + Skirt Set</div>
+            <div class="shop-price">€365 · Soft pink</div>
+          </div>
+          <button class="shop-btn">SHOP</button>
+        </div>
+      </div>
+      <div class="ugc-creator">
+        <div class="avatar">M</div>
+        <span class="creator-name">@marais_girl</span>
+      </div>
+    </div>
+
+    <div class="ugc-card">
+      <div class="ugc-video-placeholder" style="background: linear-gradient(135deg, #2D2926, #5C524A);">
+        <div class="play-btn">▶</div>
+        <div class="shop-overlay">
+          <div class="product-thumb">Catherine</div>
+          <div class="shop-info">
+            <div class="shop-product-name">Catherine Dress</div>
+            <div class="shop-price">€290 · Black</div>
+          </div>
+          <button class="shop-btn">SHOP</button>
+        </div>
+      </div>
+      <div class="ugc-creator">
+        <div class="avatar">L</div>
+        <span class="creator-name">@lucie_dubai</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 4: OUTFIT CREATOR + TRY ON -->
+<section class="fade-in">
+  <div class="section-label">04 — Outfit Creator + Virtual Try-On</div>
+  <div class="section-title">Styled into complete looks</div>
+  <div class="section-desc">Customers build outfits mixing Gaâla with other GTF brands — then try the whole look on themselves using Nano Banana.</div>
+
+  <div class="outfit-mockup">
+    <div class="outfit-left">
+      <h4>Parisian Brunch Look</h4>
+      <div class="outfit-item">
+        <div class="outfit-check">✓</div>
+        <div class="outfit-thumb">Florine</div>
+        <div class="outfit-details">
+          <div class="outfit-brand">Gaâla Paris</div>
+          <div class="outfit-name">Florine Midi Dress</div>
+          <div class="outfit-price">€260</div>
+        </div>
+      </div>
+      <div class="outfit-item">
+        <div class="outfit-check">✓</div>
+        <div class="outfit-thumb">Jacket</div>
+        <div class="outfit-details">
+          <div class="outfit-brand">Gaâla Paris</div>
+          <div class="outfit-name">Blanche Jacket</div>
+          <div class="outfit-price">€220</div>
+        </div>
+      </div>
+      <div class="outfit-item">
+        <div class="outfit-check">✓</div>
+        <div class="outfit-thumb">Heels</div>
+        <div class="outfit-details">
+          <div class="outfit-brand">Partner Brand</div>
+          <div class="outfit-name">Strappy Sandal Heel</div>
+          <div class="outfit-price">€185</div>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: var(--accent-light); border-radius: 8px; text-align: center;">
+        <div style="font-size: 12px; color: #888; margin-bottom: 4px;">Complete Look</div>
+        <div style="font-size: 24px; font-weight: 700; color: var(--accent);">€665</div>
+        <button style="margin-top: 12px; padding: 12px 32px; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">ADD ALL TO BAG</button>
+      </div>
+    </div>
+
+    <div class="outfit-right">
+      <div class="try-on-placeholder">
+        <div class="try-on-icon">👗</div>
+        <div class="try-on-text">Virtual Try-On</div>
+        <div class="try-on-sub">Powered by Nano Banana — see this outfit on yourself</div>
+      </div>
+      <div class="try-on-btn-bar">
+        <button class="btn-primary">Upload Photo</button>
+        <button class="btn-secondary">Use Model</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 5: VIBE TAGGING -->
+<section class="fade-in">
+  <div class="section-label">05 — Vibe Discovery</div>
+  <div class="section-title">Tagged to the vibes your customers search</div>
+  <div class="section-desc">Every Gaâla piece is scored across 12 style vibes. When someone browses "Old Money" or "Romantic" — your products surface naturally.</div>
+
+  <div class="vibe-showcase">
+    <div class="vibe-card">
+      <div class="vibe-card-header">
+        <h4>Old Money</h4>
+        <div class="vibe-score">12 Gaâla pieces ranked</div>
+      </div>
+      <div class="vibe-card-products">
+        <div class="vibe-product-row">
+          <span class="rank">1</span>
+          <span class="vp-name">Blanche Jacket</span>
+          <span class="vp-price">€220</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">2</span>
+          <span class="vp-name">Sybella Pants</span>
+          <span class="vp-price">€185</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">3</span>
+          <span class="vp-name">Catherine Dress</span>
+          <span class="vp-price">€290</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">4</span>
+          <span class="vp-name">Andi Tweed Jacket</span>
+          <span class="vp-price">€220</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vibe-card">
+      <div class="vibe-card-header" style="background: linear-gradient(135deg, #F5E6E0, #EDE9FE);">
+        <h4>Elegant</h4>
+        <div class="vibe-score">18 Gaâla pieces ranked</div>
+      </div>
+      <div class="vibe-card-products">
+        <div class="vibe-product-row">
+          <span class="rank">1</span>
+          <span class="vp-name">Florine Midi Dress</span>
+          <span class="vp-price">€260</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">2</span>
+          <span class="vp-name">Priscilla Midi Dress</span>
+          <span class="vp-price">€280</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">3</span>
+          <span class="vp-name">Blanche Set</span>
+          <span class="vp-price">€365</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">4</span>
+          <span class="vp-name">Lucy Two Piece</span>
+          <span class="vp-price">€310</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vibe-card">
+      <div class="vibe-card-header" style="background: linear-gradient(135deg, #FCE7F3, #EDE9FE);">
+        <h4>Romantic</h4>
+        <div class="vibe-score">15 Gaâla pieces ranked</div>
+      </div>
+      <div class="vibe-card-products">
+        <div class="vibe-product-row">
+          <span class="rank">1</span>
+          <span class="vp-name">Fleur Mini Dress</span>
+          <span class="vp-price">€250</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">2</span>
+          <span class="vp-name">Stephanie Cotton Dress</span>
+          <span class="vp-price">€260</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">3</span>
+          <span class="vp-name">Eda Cotton Blouse</span>
+          <span class="vp-price">€155</span>
+        </div>
+        <div class="vibe-product-row">
+          <span class="rank">4</span>
+          <span class="vp-name">Florine Midi Dress</span>
+          <span class="vp-price">€260</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 6: BRAND DASHBOARD -->
+<section class="fade-in">
+  <div class="section-label">06 — Your Dashboard</div>
+  <div class="section-title">Full visibility into your performance</div>
+  <div class="section-desc">Real-time analytics. Orders, revenue, customer insights, product performance — all in one place.</div>
+
+  <div class="dashboard-mockup">
+    <div class="dashboard-header">
+      <div class="dash-brand">Gaâla Paris — Brand Dashboard</div>
+      <div class="dash-status">● Live</div>
+    </div>
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <div class="stat-label">Revenue (30d)</div>
+        <div class="stat-value">€14.2k</div>
+        <div class="stat-change">↑ 23% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Orders</div>
+        <div class="stat-value">47</div>
+        <div class="stat-change">↑ 18% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg Order Value</div>
+        <div class="stat-value">€302</div>
+        <div class="stat-change">↑ 4% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Top Vibe</div>
+        <div class="stat-value" style="font-size: 20px;">Elegant</div>
+        <div class="stat-change">64% of traffic</div>
+      </div>
+    </div>
+    <div class="dashboard-chart">
+      <div class="chart-bar" style="height: 30%;"></div>
+      <div class="chart-bar" style="height: 45%;"></div>
+      <div class="chart-bar" style="height: 55%;"></div>
+      <div class="chart-bar" style="height: 40%;"></div>
+      <div class="chart-bar" style="height: 65%;"></div>
+      <div class="chart-bar" style="height: 80%;"></div>
+      <div class="chart-bar" style="height: 70%;"></div>
+      <div class="chart-bar" style="height: 90%;"></div>
+      <div class="chart-bar" style="height: 75%;"></div>
+      <div class="chart-bar" style="height: 85%;"></div>
+      <div class="chart-bar" style="height: 95%;"></div>
+      <div class="chart-bar" style="height: 100%;"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 7: GLOBAL REACH -->
+<section class="fade-in">
+  <div class="section-label">07 — Global Reach</div>
+  <div class="section-title">Your customers are everywhere</div>
+  <div class="section-desc">GTF customers in the world's most fashion-forward cities — the exact audience Gaâla deserves.</div>
+
+  <div class="reach-stats">
+    <div class="reach-stat">
+      <div class="flag">🇦🇪</div>
+      <div class="city">Dubai</div>
+      <div class="customers">Primary market</div>
+    </div>
+    <div class="reach-stat">
+      <div class="flag">🇬🇧</div>
+      <div class="city">London</div>
+      <div class="customers">Growing rapidly</div>
+    </div>
+    <div class="reach-stat">
+      <div class="flag">🇺🇸</div>
+      <div class="city">New York</div>
+      <div class="customers">Expanding</div>
+    </div>
+    <div class="reach-stat">
+      <div class="flag">🇮🇳</div>
+      <div class="city">Mumbai</div>
+      <div class="customers">Emerging</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Let's meet in Paris</h2>
+  <p>We'd love to show you the full platform in person — and discuss how Gaâla fits into Get The Fit's curated collection.</p>
+  <a href="https://calendly.com/atiqa-getthefit/30min" class="cta-button" target="_blank">BOOK A 30-MIN MEETING</a>
+  <div class="cta-note">Atiqa Rahman, Founder — visiting Paris soon</div>
+</div>
+
+<footer>
+  <p>Built with care by <a href="https://getthefit.ai" target="_blank">Get The Fit</a> · Curated emerging designers from around the world</p>
+</footer>
+
+<!-- Scroll animations -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

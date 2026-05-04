@@ -8,17 +8,17 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
   :root {
-    --bg: #FAF8F5;
+    --bg: #FFFFFF;
     --white: #FFFFFF;
-    --black: #1A1A1A;
-    --gray-100: #F5F3F0;
-    --gray-200: #E8E5E1;
-    --gray-300: #D1CCC5;
-    --gray-400: #9E9890;
-    --gray-500: #6B665E;
-    --blue: #4A90D9;
-    --blue-light: #E8F0FB;
-    --accent: #4A90D9;
+    --black: #000000;
+    --gray-100: #F0F0F0;
+    --gray-200: #D5D5D5;
+    --gray-300: #D5D5D5;
+    --gray-400: #8F8D83;
+    --gray-500: #1A1A1A;
+    --purple: #7C6AEF;
+    --purple-light: #EEEAFD;
+    --accent: #7C6AEF;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Inter', -apple-system, sans-serif;
   }
@@ -59,7 +59,7 @@
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background: var(--blue);
+    background: var(--purple);
     color: white;
     border: none;
     border-radius: 20px;
@@ -82,14 +82,14 @@
   .user-pill .avatar {
     width: 24px;
     height: 24px;
-    background: var(--blue-light);
+    background: var(--purple-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 10px;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--purple);
   }
 
   .header-search {
@@ -131,7 +131,7 @@
     position: absolute;
     top: -6px;
     right: -8px;
-    background: var(--blue);
+    background: var(--purple);
     color: white;
     font-size: 9px;
     font-weight: 700;
@@ -145,7 +145,7 @@
 
   /* ===== INTRO BANNER ===== */
   .intro-banner {
-    background: linear-gradient(135deg, #F5F0EB 0%, #EDE9FE 50%, #F5E6E0 100%);
+    background: linear-gradient(135deg, #EEEAFD 0%, #F5E6F0 50%, #EEEAFD 100%);
     padding: 60px 32px;
     text-align: center;
   }
@@ -160,7 +160,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--blue);
+    color: var(--purple);
     margin-bottom: 16px;
   }
 
@@ -171,7 +171,7 @@
     margin-bottom: 12px;
   }
 
-  .intro-banner h1 em { font-style: italic; color: var(--blue); }
+  .intro-banner h1 em { font-style: italic; color: var(--purple); }
 
   .intro-banner p {
     font-size: 15px;
@@ -210,7 +210,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--blue);
+    color: var(--purple);
     margin-bottom: 8px;
   }
 
@@ -254,7 +254,7 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
 
-  .ai-search-bar:hover { border-color: var(--blue); }
+  .ai-search-bar:hover { border-color: var(--purple); }
   .ai-search-bar .cam { font-size: 18px; color: var(--gray-400); }
 
   .ai-search-bar input {
@@ -270,7 +270,7 @@
   .ai-search-bar .send-btn {
     width: 40px;
     height: 40px;
-    background: var(--blue);
+    background: var(--purple);
     border: none;
     border-radius: 10px;
     color: white;
@@ -291,17 +291,17 @@
 
   .pill {
     padding: 8px 18px;
-    background: var(--blue-light);
+    background: var(--purple-light);
     border-radius: 100px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--blue);
+    color: var(--purple);
     cursor: pointer;
     transition: all 0.2s;
     border: none;
   }
 
-  .pill:hover, .pill.active { background: var(--blue); color: white; }
+  .pill:hover, .pill.active { background: var(--purple); color: white; }
 
   /* ===== PRODUCT GRID (GTF style) ===== */
   .products-grid {
@@ -429,15 +429,15 @@
   }
 
   .section-header .arrows button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--purple);
+    color: var(--purple);
   }
 
   /* ===== BRAND PAGE ===== */
   .brand-hero-section {
     text-align: center;
     padding: 48px 32px;
-    background: linear-gradient(180deg, var(--gray-100), var(--bg));
+    background: linear-gradient(180deg, var(--purple-light), var(--bg));
   }
 
   .brand-hero-section h1 {
@@ -463,8 +463,8 @@
   }
 
   .brand-hero-section .vibe-tags .pill {
-    background: var(--blue-light);
-    color: var(--blue);
+    background: var(--purple-light);
+    color: var(--purple);
   }
 
   /* ===== TRENDING ROW ===== */
@@ -569,7 +569,7 @@
     cursor: pointer;
   }
 
-  .pdp-gallery .thumb-row .thumb:hover { border-color: var(--blue); }
+  .pdp-gallery .thumb-row .thumb:hover { border-color: var(--purple); }
 
   .pdp-gallery .thumb-row .thumb img {
     width: 100%;
@@ -605,11 +605,11 @@
 
   .pdp-info .pdp-tags .tag {
     padding: 4px 12px;
-    background: var(--blue-light);
+    background: var(--purple-light);
     border-radius: 100px;
     font-size: 11px;
     font-weight: 500;
-    color: var(--blue);
+    color: var(--purple);
   }
 
   .pdp-info .pdp-price {
@@ -665,7 +665,7 @@
     transition: all 0.2s;
   }
 
-  .size-btn:hover { border-color: var(--blue); }
+  .size-btn:hover { border-color: var(--purple); }
   .size-btn.active { background: var(--black); color: white; border-color: var(--black); }
 
   /* Add to bag */
@@ -693,7 +693,7 @@
   .add-to-bag .tryon-btn {
     width: 52px;
     height: 52px;
-    background: var(--blue);
+    background: var(--purple);
     border: none;
     border-radius: 10px;
     color: white;
@@ -798,8 +798,8 @@
     width: 24px;
     height: 24px;
     border-radius: 6px;
-    border: 2px solid var(--blue);
-    background: var(--blue);
+    border: 2px solid var(--purple);
+    background: var(--purple);
     color: white;
     display: flex;
     align-items: center;
@@ -926,7 +926,7 @@
     align-items: center;
     gap: 8px;
     padding: 14px 28px;
-    background: var(--blue);
+    background: var(--purple);
     color: white;
     border: none;
     border-radius: 10px;
@@ -970,7 +970,7 @@
     height: 24px;
     border-radius: 50%;
     border: 2px solid white;
-    background: var(--blue);
+    background: var(--purple);
     color: white;
     display: flex;
     align-items: center;
@@ -1023,7 +1023,7 @@
   }
 
   .outfit-bottom-bar .tryon-me {
-    background: var(--blue);
+    background: var(--purple);
     color: white;
     border: none;
   }
@@ -1109,7 +1109,7 @@
 
   .dash-chart .bar {
     flex: 1;
-    background: linear-gradient(to top, var(--blue), rgba(74,144,217,0.3));
+    background: linear-gradient(to top, var(--purple), rgba(74,144,217,0.3));
     border-radius: 3px 3px 0 0;
     min-height: 12px;
   }
@@ -1118,7 +1118,7 @@
   .cta-block {
     text-align: center;
     padding: 80px 32px;
-    background: linear-gradient(135deg, #1A1A1A, #2D1B69);
+    background: linear-gradient(135deg, #000000, #3D2B8F);
     color: white;
     border-radius: 20px;
     margin: 48px 32px;
@@ -1152,7 +1152,7 @@
     transition: all 0.3s;
   }
 
-  .cta-block .cta-btn:hover { background: var(--blue); color: white; }
+  .cta-block .cta-btn:hover { background: var(--purple); color: white; }
 
   .cta-block .cta-note {
     margin-top: 16px;
@@ -1668,16 +1668,98 @@
 </div>
 
 <div style="text-align: center; padding: 32px; font-size: 12px; color: var(--gray-400);">
-  Built by <a href="https://getthefit.ai" style="color: var(--blue); text-decoration: none;">Get The Fit</a> · Curated emerging designers from around the world
+  Built by <a href="https://getthefit.ai" style="color: var(--purple); text-decoration: none;">Get The Fit</a> · Curated emerging designers from around the world
 </div>
 
 <script>
+  // Fade in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Pill click interaction
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.pill');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Size button interaction
+  document.querySelectorAll('.size-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.size-btn');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Shop the Look toggle interaction
+  document.querySelectorAll('.stl-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      this.classList.toggle('off');
+      // Recalculate total
+      const items = document.querySelectorAll('.stl-item');
+      let total = 0, count = 0;
+      items.forEach(item => {
+        const t = item.querySelector('.stl-toggle');
+        if (t && !t.classList.contains('off')) {
+          const priceText = item.querySelector('.stl-price').textContent;
+          total += parseInt(priceText.replace(/[^0-9]/g, ''));
+          count++;
+        }
+      });
+      const summary = document.querySelector('.stl-summary');
+      if (summary) {
+        summary.querySelector('.count').textContent = count + ' of ' + items.length;
+        summary.querySelector('.stl-total-price').textContent = '€' + total;
+      }
+    });
+  });
+
+  // Heart button toggle
+  document.querySelectorAll('.heart-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.textContent = this.textContent === '♡' ? '♥' : '♡';
+      this.style.color = this.textContent === '♥' ? '#EF4444' : '';
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Tab switching on PDP
+  document.querySelectorAll('.pdp-tabs .tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.tab');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Add to bag animation
+  document.querySelectorAll('.bag-btn, .add-btn, .add-cart').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const original = this.textContent;
+      this.textContent = '✓ Added!';
+      this.style.background = '#22C55E';
+      setTimeout(() => {
+        this.textContent = original;
+        this.style.background = '';
+      }, 1500);
+    });
+  });
 </script>
 
 </body>

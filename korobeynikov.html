@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOROBEYNIKOV × Get The Fit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #FFFFFF;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-100: #F0F0F0;
+    --gray-200: #D5D5D5;
+    --gray-300: #D5D5D5;
+    --gray-400: #8F8D83;
+    --gray-500: #1A1A1A;
+    --purple: #7C6AEF;
+    --purple-light: #EEEAFD;
+    --accent: #7C6AEF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); color: var(--black); background: var(--bg); }
+
+  /* ===== GTF HEADER (exact match) ===== */
+  .gtf-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .gtf-logo {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .header-center {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .chat-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .user-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--gray-100);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .user-pill .avatar {
+    width: 24px;
+    height: 24px;
+    background: var(--purple-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+
+  .header-search {
+    display: flex;
+    align-items: center;
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 8px 16px;
+    gap: 8px;
+    width: 280px;
+  }
+
+  .header-search input {
+    border: none;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    color: var(--gray-400);
+  }
+
+  .header-search .search-icon { font-size: 14px; color: var(--gray-400); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-icon {
+    font-size: 18px;
+    color: var(--gray-500);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .header-icon .badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: var(--purple);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== INTRO BANNER ===== */
+  .intro-banner {
+    background: linear-gradient(135deg, #EEEAFD 0%, #F5E6F0 50%, #EEEAFD 100%);
+    padding: 60px 32px;
+    text-align: center;
+  }
+
+  .intro-banner .intro-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(74,144,217,0.1);
+    border: 1px solid rgba(74,144,217,0.2);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 16px;
+  }
+
+  .intro-banner h1 {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .intro-banner h1 em { font-style: italic; color: var(--purple); }
+
+  .intro-banner p {
+    font-size: 15px;
+    color: var(--gray-500);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===== BREADCRUMB ===== */
+  .breadcrumb {
+    padding: 16px 32px;
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  .breadcrumb a { color: var(--gray-400); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--black); }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+    padding: 48px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: var(--gray-200);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 8px;
+  }
+
+  /* ===== GTF HOMEPAGE HERO (AI Search) ===== */
+  .ai-hero {
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .ai-hero .gtf-mark {
+    font-family: var(--serif);
+    font-size: 56px;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .ai-hero .tagline {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+
+  .ai-hero .tagline-sub {
+    font-size: 14px;
+    color: var(--gray-400);
+    margin-bottom: 28px;
+  }
+
+  .ai-search-bar {
+    max-width: 680px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 14px 20px;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .ai-search-bar:hover { border-color: var(--purple); }
+  .ai-search-bar .cam { font-size: 18px; color: var(--gray-400); }
+
+  .ai-search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 15px;
+    outline: none;
+    color: var(--black);
+  }
+
+  .ai-search-bar .send-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--purple);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pills-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .pill {
+    padding: 8px 18px;
+    background: var(--purple-light);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--purple);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .pill:hover, .pill.active { background: var(--purple); color: white; }
+
+  /* ===== PRODUCT GRID (GTF style) ===== */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .product-card .card-img {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .product-card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-card .card-img .heart-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .product-card .card-img .vibe-pill {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(74,144,217,0.9);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .product-card .card-body {
+    padding: 14px 16px;
+  }
+
+  .product-card .card-body .brand-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+  }
+
+  .product-card .card-body .product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+
+  .product-card .card-body .product-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .product-card .card-body .product-price .converted {
+    font-weight: 400;
+    color: var(--gray-400);
+    font-size: 12px;
+  }
+
+  /* ===== SECTION HEADER (with arrows) ===== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .section-header .arrows {
+    display: flex;
+    gap: 8px;
+  }
+
+  .section-header .arrows button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-300);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .section-header .arrows button:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+  }
+
+  /* ===== BRAND PAGE ===== */
+  .brand-hero-section {
+    text-align: center;
+    padding: 48px 32px;
+    background: linear-gradient(180deg, var(--purple-light), var(--bg));
+  }
+
+  .brand-hero-section h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+  }
+
+  .brand-hero-section .brand-desc {
+    font-size: 14px;
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+  }
+
+  .brand-hero-section .vibe-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .brand-hero-section .vibe-tags .pill {
+    background: var(--purple-light);
+    color: var(--purple);
+  }
+
+  /* ===== TRENDING ROW ===== */
+  .trending-row {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .trending-card {
+    min-width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .trending-card img {
+    width: 200px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .trending-card .trending-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .trending-card .trending-overlay .t-avatar {
+    width: 24px;
+    height: 24px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .trending-card .trending-overlay .t-handle {
+    font-size: 11px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  .trending-card .trending-views {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  /* ===== PDP LAYOUT ===== */
+  .pdp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .pdp-gallery {
+    display: grid;
+    gap: 8px;
+  }
+
+  .pdp-gallery .main-img {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .pdp-gallery .main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pdp-gallery .thumb-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .pdp-gallery .thumb-row .thumb {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .pdp-gallery .thumb-row .thumb:hover { border-color: var(--purple); }
+
+  .pdp-gallery .thumb-row .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pdp-info {
+    padding-top: 8px;
+  }
+
+  .pdp-info .pdp-brand {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+  }
+
+  .pdp-info .pdp-name {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .pdp-info .pdp-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pdp-info .pdp-tags .tag {
+    padding: 4px 12px;
+    background: var(--purple-light);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--purple);
+  }
+
+  .pdp-info .pdp-price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .pdp-info .pdp-price .pdp-converted {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-400);
+  }
+
+  /* Tabs */
+  .pdp-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .pdp-tabs .tab {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-400);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .pdp-tabs .tab.active {
+    color: var(--black);
+    border-bottom-color: var(--black);
+  }
+
+  /* Sizes */
+  .size-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .size-btn {
+    padding: 10px 18px;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .size-btn:hover { border-color: var(--purple); }
+  .size-btn.active { background: var(--black); color: white; border-color: var(--black); }
+
+  /* Add to bag */
+  .add-to-bag {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .add-to-bag .bag-btn {
+    flex: 1;
+    padding: 16px;
+    background: var(--black);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .add-to-bag .bag-btn:hover { background: #333; }
+
+  .add-to-bag .tryon-btn {
+    width: 52px;
+    height: 52px;
+    background: var(--purple);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Features */
+  .pdp-features {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .pdp-feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  .pdp-feature .check { color: #22C55E; }
+
+  /* ===== SHOP THE LOOK PANEL ===== */
+  .stl-panel {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .stl-panel h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .stl-panel .stl-sub {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 24px;
+  }
+
+  .stl-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .stl-item:last-of-type { border-bottom: none; }
+
+  .stl-item .stl-thumb {
+    width: 64px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .stl-item .stl-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .stl-item .stl-details { flex: 1; }
+
+  .stl-item .stl-details .stl-brand {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .stl-item .stl-details .stl-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px 0;
+  }
+
+  .stl-item .stl-details .stl-size {
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  .stl-item .stl-price {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 12px;
+  }
+
+  .stl-item .stl-toggle {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid var(--purple);
+    background: var(--purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .stl-item .stl-toggle.off {
+    background: white;
+    color: transparent;
+  }
+
+  .stl-summary {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--gray-100);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stl-summary .stl-total-label {
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .stl-summary .stl-total-label .count { font-weight: 600; color: var(--black); }
+
+  .stl-summary .stl-total-price {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .stl-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .stl-actions button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .stl-actions .save-btn {
+    background: var(--white);
+    border: 2px solid var(--gray-300);
+    color: var(--black);
+  }
+
+  .stl-actions .add-btn {
+    background: var(--black);
+    border: none;
+    color: white;
+  }
+
+  /* ===== VIRTUAL TRY ON ===== */
+  .tryon-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .tryon-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tryon-images .tryon-img {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .tryon-images .tryon-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tryon-panel {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .tryon-panel h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .tryon-panel .tryon-desc {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 28px;
+  }
+
+  .tryon-mannequin {
+    width: 200px;
+    height: 280px;
+    background: var(--gray-100);
+    border-radius: 12px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--gray-300);
+  }
+
+  .upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* ===== CREATE OUTFIT ===== */
+  .outfit-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+  }
+
+  .outfit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .outfit-grid .outfit-item {
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .outfit-grid .outfit-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .outfit-grid .outfit-item .outfit-select {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: var(--purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .outfit-preview {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 100px;
+  }
+
+  .outfit-preview h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .outfit-preview .outfit-mannequin {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--gray-100);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--gray-300);
+  }
+
+  .outfit-bottom-bar {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .outfit-bottom-bar button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .outfit-bottom-bar .tryon-me {
+    background: var(--purple);
+    color: white;
+    border: none;
+  }
+
+  .outfit-bottom-bar .add-cart {
+    background: var(--gray-100);
+    color: var(--black);
+    border: none;
+  }
+
+  /* ===== BRAND DASHBOARD PREVIEW ===== */
+  .dash-preview {
+    background: #1A1A1A;
+    border-radius: 16px;
+    padding: 32px;
+    color: white;
+  }
+
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333;
+  }
+
+  .dash-header h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+  }
+
+  .dash-header .live-badge {
+    padding: 5px 12px;
+    background: rgba(34,197,94,0.15);
+    color: #22C55E;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .dash-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .dash-stat {
+    background: #252525;
+    border-radius: 12px;
+    padding: 18px;
+  }
+
+  .dash-stat .ds-label {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .dash-stat .ds-value {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .dash-stat .ds-change {
+    font-size: 11px;
+    color: #22C55E;
+    margin-top: 4px;
+  }
+
+  .dash-chart {
+    background: #252525;
+    border-radius: 12px;
+    padding: 20px;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .dash-chart .bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--purple), rgba(74,144,217,0.3));
+    border-radius: 3px 3px 0 0;
+    min-height: 12px;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-block {
+    text-align: center;
+    padding: 80px 32px;
+    background: linear-gradient(135deg, #000000, #3D2B8F);
+    color: white;
+    border-radius: 20px;
+    margin: 48px 32px;
+  }
+
+  .cta-block h2 {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .cta-block p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    max-width: 440px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .cta-block .cta-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: white;
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+
+  .cta-block .cta-btn:hover { background: var(--purple); color: white; }
+
+  .cta-block .cta-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .pdp-layout { grid-template-columns: 1fr; }
+    .tryon-layout { grid-template-columns: 1fr; }
+    .outfit-layout { grid-template-columns: 1fr; }
+    .dash-stats { grid-template-columns: repeat(2, 1fr); }
+    .header-search { display: none; }
+    .section { padding: 32px 16px; }
+  }
+
+  /* ===== FADE IN ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="gtf-header">
+  <a class="gtf-logo">GTF</a>
+  <div class="header-center">
+    <button class="chat-btn">💬 Chat</button>
+    <div class="user-pill">
+      <div class="avatar">S</div>
+      <span>Sarah Chen</span>
+    </div>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search for a brand or product here">
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="header-icon">♡</span>
+    <span class="header-icon">🛒<span class="badge">2</span></span>
+  </div>
+</header>
+
+<div class="intro-banner">
+  <div class="intro-badge">Exclusive Preview for KOROBEYNIKOV</div>
+  <h1>Imagine <em>KOROBEYNIKOV</em> on Get The Fit</h1>
+  <p>Here's how your customers would discover, try on, and buy your pieces on GTF.</p>
+</div>
+
+<div class="section fade-in">
+  <div class="section-number">01 — AI Discovery on Homepage</div>
+  <div class="ai-hero">
+    <div class="gtf-mark">GTF</div>
+    <div class="tagline">Curated emerging designers from around the world.</div>
+    <div class="tagline-sub">AI-powered discovery that actually gets you.</div>
+    <div class="ai-search-bar">
+      <span class="cam">📷</span>
+      <input type="text" value="designer evening gown crystal embellished luxury" readonly>
+      <button class="send-btn">→</button>
+    </div>
+    <div class="pills-row">
+            <span class="pill">Glam</span>
+      <span class="pill">Sexy Elegant</span>
+      <span class="pill">Dubai Glam</span>
+    </div>
+    <div class="products-grid" style="max-width:1000px;margin:0 auto;grid-template-columns:repeat(3,1fr);">
+      
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="Crystal Embellished Gown" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+          <span class="vibe-pill">Glam</span>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Crystal Embellished Gown</div>
+          <div class="product-price">€1,200 <span class="converted">~AED 4,800</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="Sculpted Blazer Dress" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+          <span class="vibe-pill">IT Girl</span>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Sculpted Blazer Dress</div>
+          <div class="product-price">€680 <span class="converted">~AED 2,720</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="Draped Satin Midi" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+          <span class="vibe-pill">Elegant</span>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Draped Satin Midi</div>
+          <div class="product-price">€520 <span class="converted">~AED 2,080</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="fade-in">
+  <div class="breadcrumb"><a href="#">Home</a> / <a href="#">Brands</a> / KOROBEYNIKOV</div>
+  <div class="brand-hero-section">
+    <h1>KOROBEYNIKOV</h1>
+    <div class="brand-desc">Designer eveningwear with structured elegance from Russia. Bold silhouettes, luxurious fabrics, and meticulous construction. For women who command the room.</div>
+    <div class="vibe-tags">
+            <span class="pill">Glam</span>
+      <span class="pill">Sexy Elegant</span>
+      <span class="pill">Dubai Glam</span>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <h2>Trending in KOROBEYNIKOV</h2>
+      <div class="arrows"><button>←</button><button>→</button></div>
+    </div>
+    <div class="trending-row">
+      <div class="trending-card">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="Crystal Embellished Gown" onerror="this.parentElement.style.display='none'">
+        <div class="trending-overlay">
+          <div class="t-avatar">S</div>
+          <span class="t-handle">@style_curator</span>
+        </div>
+        <span class="trending-views">12.4K</span>
+      </div>
+      <div class="trending-card">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="Sculpted Blazer Dress" onerror="this.parentElement.style.display='none'">
+        <div class="trending-overlay">
+          <div class="t-avatar">P</div>
+          <span class="t-handle">@paris_looks</span>
+        </div>
+        <span class="trending-views">8.7K</span>
+      </div>
+      <div class="trending-card">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="Draped Satin Midi" onerror="this.parentElement.style.display='none'">
+        <div class="trending-overlay">
+          <div class="t-avatar">L</div>
+          <span class="t-handle">@london_fashion</span>
+        </div>
+        <span class="trending-views">15.2K</span>
+      </div>
+      <div class="trending-card">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-4.png" alt="Feather-Trim Cocktail Dress" onerror="this.parentElement.style.display='none'">
+        <div class="trending-overlay">
+          <div class="t-avatar">D</div>
+          <span class="t-handle">@dubai_dresser</span>
+        </div>
+        <span class="trending-views">6.1K</span>
+      </div>
+      <div class="trending-card">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-5.png" alt="Crystal Embellished Gown" onerror="this.parentElement.style.display='none'">
+        <div class="trending-overlay">
+          <div class="t-avatar">F</div>
+          <span class="t-handle">@fashion_fwd</span>
+        </div>
+        <span class="trending-views">9.3K</span>
+      </div></div>
+  </div>
+  <div class="section" style="padding-top:0;">
+    <div class="section-header">
+      <h2>The Collection</h2>
+      <div class="arrows"><button>←</button><button>→</button></div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="Crystal Embellished Gown" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Crystal Embellished Gown</div>
+          <div class="product-price">€1,200</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="Sculpted Blazer Dress" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Sculpted Blazer Dress</div>
+          <div class="product-price">€680</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="Draped Satin Midi" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Draped Satin Midi</div>
+          <div class="product-price">€520</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-4.png" alt="Feather-Trim Cocktail Dress" onerror="this.style.display='none'">
+          <button class="heart-btn">♡</button>
+        </div>
+        <div class="card-body">
+          <div class="brand-label">KOROBEYNIKOV</div>
+          <div class="product-name">Feather-Trim Cocktail Dress</div>
+          <div class="product-price">€890</div>
+        </div>
+      </div></div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="fade-in">
+  <div class="breadcrumb"><a href="#">Home</a> / <a href="#">Search Results</a> / Crystal Embellished Gown</div>
+  <div class="section">
+    <div class="section-number">03 — Product Detail Page</div>
+    <div class="pdp-layout">
+      <div class="pdp-gallery">
+        <div class="main-img">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="Crystal Embellished Gown">
+        </div>
+        <div class="thumb-row">
+          <div class="thumb"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt=""></div>
+          <div class="thumb"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt=""></div>
+          <div class="thumb"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt=""></div>
+          <div class="thumb"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-4.png" alt=""></div></div>
+      </div>
+      <div class="pdp-info">
+        <div class="pdp-brand">KOROBEYNIKOV</div>
+        <div class="pdp-name">Crystal Embellished Gown</div>
+        <div class="pdp-tags">
+          <span class="tag">Glam</span>
+          <span class="tag">IT Girl</span>
+        </div>
+        <div class="pdp-price">€1,200 <span class="pdp-converted">~AED 4,800</span></div>
+        <div class="pdp-tabs">
+          <div class="tab active">Shop the Look</div>
+          <div class="tab">Create Outfit</div>
+          <div class="tab">Custom Request</div>
+        </div>
+        <div style="font-size:12px;color:#8F8D83;margin-bottom:8px;">Size Guide</div>
+        <div class="size-row">
+          <button class="size-btn">XS</button>
+          <button class="size-btn">S</button>
+          <button class="size-btn active">M</button>
+          <button class="size-btn">L</button>
+          <button class="size-btn">XL</button>
+        </div>
+        <div class="add-to-bag">
+          <button class="bag-btn">Add to Bag</button>
+          <button class="tryon-btn">👗</button>
+        </div>
+        <div class="pdp-features">
+          <div class="pdp-feature"><span class="check">✓</span> GTF Verified</div>
+          <div class="pdp-feature"><span class="check">✓</span> Premium Quality</div>
+          <div class="pdp-feature"><span class="check">✓</span> International Shipping</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-in">
+  <div class="section-number">04 — Shop the Look</div>
+  <div class="section-header"><h2>Shop the Look</h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+    <div class="product-card" style="border-radius:16px;">
+      <div class="card-img" style="aspect-ratio:3/4;">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="Look">
+      </div>
+    </div>
+    <div class="stl-panel">
+      <h3>Curated Look</h3>
+      <div class="stl-sub">Toggle items to customize your selection</div>
+      
+      <div class="stl-item">
+        <div class="stl-thumb">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="stl-details">
+          <div class="stl-brand">KOROBEYNIKOV</div>
+          <div class="stl-name">Crystal Embellished Gown</div>
+          <div class="stl-size">Size: M</div>
+        </div>
+        <div class="stl-price">€1,200</div>
+        <div class="stl-toggle ">✓</div>
+      </div>
+      <div class="stl-item">
+        <div class="stl-thumb">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="stl-details">
+          <div class="stl-brand">KOROBEYNIKOV</div>
+          <div class="stl-name">Sculpted Blazer Dress</div>
+          <div class="stl-size">Size: M</div>
+        </div>
+        <div class="stl-price">€680</div>
+        <div class="stl-toggle ">✓</div>
+      </div>
+      <div class="stl-item">
+        <div class="stl-thumb">
+          <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="stl-details">
+          <div class="stl-brand">KOROBEYNIKOV</div>
+          <div class="stl-name">Draped Satin Midi</div>
+          <div class="stl-size">Size: M</div>
+        </div>
+        <div class="stl-price">€520</div>
+        <div class="stl-toggle off">✓</div>
+      </div>
+      <div class="stl-summary">
+        <div class="stl-total-label">Selected: <span class="count">2 of 3</span></div>
+        <div class="stl-total-price">£600</div>
+      </div>
+      <div class="stl-actions">
+        <button class="save-btn">Save the Look</button>
+        <button class="add-btn">Add to Bag</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-in">
+  <div class="section-number">05 — Virtual Try-On</div>
+  <div class="section-header"><h2>See It on Yourself</h2></div>
+  <div class="tryon-layout">
+    <div class="tryon-images">
+      <div class="tryon-img"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tryon-img"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tryon-img"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="" onerror="this.parentElement.style.display='none'"></div>
+      <div class="tryon-img"><img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-4.png" alt="" onerror="this.parentElement.style.display='none'"></div></div>
+    <div class="tryon-panel">
+      <h3>Upload your image</h3>
+      <div class="tryon-desc">See how Crystal Embellished Gown looks on you before you buy.</div>
+      <div class="tryon-mannequin">👤</div>
+      <button class="upload-btn">📷 Upload Your Photo</button>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-in">
+  <div class="section-number">06 — Outfit Creator</div>
+  <div class="pills-row" style="justify-content:flex-start;margin-bottom:24px;">
+    <button class="pill active">All</button>
+    <button class="pill">Dresses</button>
+    <button class="pill">Tops</button>
+    <button class="pill">Bottoms</button>
+    <button class="pill">Accessories</button>
+  </div>
+  <div class="outfit-layout">
+    <div class="outfit-grid">
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-1.png" alt="" onerror="this.parentElement.style.display='none'">
+        <div class="outfit-select">✓</div>
+      </div>
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-2.png" alt="" onerror="this.parentElement.style.display='none'">
+        <div class="outfit-select">✓</div>
+      </div>
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-3.png" alt="" onerror="this.parentElement.style.display='none'">
+        
+      </div>
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-4.png" alt="" onerror="this.parentElement.style.display='none'">
+        
+      </div>
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-5.png" alt="" onerror="this.parentElement.style.display='none'">
+        
+      </div>
+      <div class="outfit-item">
+        <img src="https://atiqarahman.github.io/gtf-brand-pages/images/korobeynikov/product-6.png" alt="" onerror="this.parentElement.style.display='none'">
+        
+      </div></div>
+    <div class="outfit-preview">
+      <h3>Your Outfit</h3>
+      <div class="outfit-mannequin">👗</div>
+      <div class="outfit-bottom-bar">
+        <button class="tryon-me">⭐ Try On Me</button>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-in">
+  <div class="section-number">07 — Your Brand Dashboard</div>
+  <div class="section-header"><h2>Full visibility into your performance</h2></div>
+  <div class="dash-preview">
+    <div class="dash-header">
+      <h3>KOROBEYNIKOV — Brand Dashboard</h3>
+      <span class="live-badge">● Live</span>
+    </div>
+    <div class="dash-stats">
+      <div class="dash-stat"><div class="ds-label">Revenue (30d)</div><div class="ds-value">$19.8k</div><div class="ds-change">↑ 23%</div></div>
+      <div class="dash-stat"><div class="ds-label">Orders</div><div class="ds-value">16</div><div class="ds-change">↑ 18%</div></div>
+      <div class="dash-stat"><div class="ds-label">Avg Order</div><div class="ds-value">$1,238</div><div class="ds-change">↑ 4%</div></div>
+      <div class="dash-stat"><div class="ds-label">Top Vibe</div><div class="ds-value" style="font-size:18px;">Glam</div><div class="ds-change">66% of traffic</div></div>
+    </div>
+    <div class="dash-chart">
+      <div class="bar" style="height:30%;"></div><div class="bar" style="height:45%;"></div><div class="bar" style="height:55%;"></div>
+      <div class="bar" style="height:40%;"></div><div class="bar" style="height:65%;"></div><div class="bar" style="height:80%;"></div>
+      <div class="bar" style="height:70%;"></div><div class="bar" style="height:90%;"></div><div class="bar" style="height:75%;"></div>
+      <div class="bar" style="height:85%;"></div><div class="bar" style="height:95%;"></div><div class="bar" style="height:100%;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Let's meet in London</h2>
+  <p>We'd love to show you the full platform and discuss how KOROBEYNIKOV fits into GTF's curated collection.</p>
+  <a href="https://calendly.com/atiqa-getthefit/30min" class="cta-btn" target="_blank">BOOK A 30-MIN MEETING</a>
+  <div class="cta-note">Atiqa Rahman, Founder · Get The Fit · From May 10th</div>
+</div>
+
+<div style="text-align:center;padding:32px;font-size:12px;color:#8F8D83;">
+  Built by <a href="https://getthefit.ai" style="color:#7C6AEF;text-decoration:none;">Get The Fit</a> · Curated emerging designers from around the world
+</div>
+
+<script>
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Pill click interaction
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.pill');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Size button interaction
+  document.querySelectorAll('.size-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.size-btn');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Shop the Look toggle interaction
+  document.querySelectorAll('.stl-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      this.classList.toggle('off');
+      // Recalculate total
+      const items = document.querySelectorAll('.stl-item');
+      let total = 0, count = 0;
+      items.forEach(item => {
+        const t = item.querySelector('.stl-toggle');
+        if (t && !t.classList.contains('off')) {
+          const priceText = item.querySelector('.stl-price').textContent;
+          total += parseInt(priceText.replace(/[^0-9]/g, ''));
+          count++;
+        }
+      });
+      const summary = document.querySelector('.stl-summary');
+      if (summary) {
+        summary.querySelector('.count').textContent = count + ' of ' + items.length;
+        summary.querySelector('.stl-total-price').textContent = '€' + total;
+      }
+    });
+  });
+
+  // Heart button toggle
+  document.querySelectorAll('.heart-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.textContent = this.textContent === '♡' ? '♥' : '♡';
+      this.style.color = this.textContent === '♥' ? '#EF4444' : '';
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Tab switching on PDP
+  document.querySelectorAll('.pdp-tabs .tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const siblings = this.parentElement.querySelectorAll('.tab');
+      siblings.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Add to bag animation
+  document.querySelectorAll('.bag-btn, .add-btn, .add-cart').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const original = this.textContent;
+      this.textContent = '✓ Added!';
+      this.style.background = '#22C55E';
+      setTimeout(() => {
+        this.textContent = original;
+        this.style.background = '';
+      }, 1500);
+    });
+  });
+</script>
+</body>
+</html>

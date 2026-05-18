@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GTF Brand Data Pipeline — Status & Architecture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; max-width: 900px; margin: 0 auto; padding: 48px 40px; color: #1a1a1a; line-height: 1.7; font-size: 13px; }
+  .cover { text-align: center; padding: 60px 0 40px; border-bottom: 3px solid #1a1a1a; margin-bottom: 40px; }
+  .cover h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .cover .sub { font-size: 16px; color: #666; margin-bottom: 24px; }
+  .cover .stats { display: flex; justify-content: center; gap: 32px; margin-top: 24px; }
+  .cover .stat { text-align: center; }
+  .cover .stat .num { font-size: 28px; font-weight: 700; color: #7C6AEF; }
+  .cover .stat .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  h2 { font-size: 18px; font-weight: 700; margin-top: 36px; margin-bottom: 12px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+  h3 { font-size: 14px; font-weight: 700; color: #7C6AEF; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  p { margin-bottom: 10px; color: #333; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+  th { background: #1a1a1a; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
+  td { padding: 8px 12px; border: 1px solid #eee; }
+  tr:nth-child(even) td { background: #f8f8f6; }
+  .pipeline { background: #f8f7ff; border: 2px solid #7C6AEF; border-radius: 12px; padding: 24px; margin: 16px 0; }
+  .pipeline .step { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e8e5fd; }
+  .pipeline .step:last-child { border-bottom: none; }
+  .pipeline .step-num { background: #7C6AEF; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0; }
+  .pipeline .step-num.done { background: #22C55E; }
+  .pipeline .step-num.blocked { background: #EF4444; }
+  .pipeline .step-num.pending { background: #F59E0B; }
+  .pipeline .step-body h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .pipeline .step-body p { font-size: 12px; color: #666; margin: 0; }
+  .highlight { background: #fef5f5; border-left: 4px solid #EF4444; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight.green { background: #f0fdf4; border-color: #22C55E; }
+  .highlight.amber { background: #fffbeb; border-color: #F59E0B; }
+  .highlight h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .highlight p { margin: 0; font-size: 12px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; font-size: 11px; color: #aaa; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>GTF Brand Data Pipeline</h1>
+  <div class="sub">Complete Architecture · Current Status · Why MediaPipe is Critical</div>
+  <p style="font-size:12px;color:#888;">For Rahul · May 15, 2026</p>
+  <div class="stats">
+    <div class="stat"><div class="num">8</div><div class="label">Pipeline Steps</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Steps Working</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">Critical Blocker</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">Brand Formats</div></div>
+  </div>
+</div>
+
+<h2>Why This Matters</h2>
+<p>Every product on GTF flows through this pipeline. If the pipeline is broken, <strong>everything downstream breaks</strong>:</p>
+<ul>
+  <li><strong>Wrong image selected</strong> → wrong attributes extracted → product appears in wrong vibes → customer sees irrelevant results</li>
+  <li><strong>No flat lay generated</strong> → no Shop the Look cards → no Outfit Creator compositions → homepage looks empty</li>
+  <li><strong>Bad CSV parsing</strong> → wrong prices, missing sizes, duplicate products → customer trust destroyed</li>
+  <li><strong>No image classification</strong> → humans manually sort images for every brand → doesn't scale past 10 brands</li>
+</ul>
+<p>GTF's entire value proposition — AI-powered discovery, Shop the Look, Outfit Creator, vibe-based matching — depends on clean product data entering the system. This pipeline IS the foundation.</p>
+
+<h2>The Complete Pipeline</h2>
+
+<div class="pipeline">
+  <div class="step">
+    <div class="step-num done">1</div>
+    <div class="step-body">
+      <h4>CSV Parsing & Validation ✅</h4>
+      <p>Brand uploads messy CSV/XLSX → fuzzy column mapping → price cleaning → deduplication → size explosion → material normalization → GTF SKU generation</p>
+      <p><strong>Status:</strong> Working. Tested on Bobo (16 products), Afro (59 products), TOD (184→68 deduplicated).</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num done">2</div>
+    <div class="step-body">
+      <h4>Image Acquisition ✅</h4>
+      <p>Download product images from Google Drive (Pattern 3: folder per product, Pattern 4: master folder + SKU match) or store Shopify URLs directly (Pattern 1).</p>
+      <p><strong>Status:</strong> Patterns 3 & 4 working. Pattern 1 (Shopify) untested — ITRH is the first Shopify brand.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num pending">3</div>
+    <div class="step-body">
+      <h4>MediaPipe Image Classification ⚠️ CRITICAL</h4>
+      <p>Classify every image: FULL_BODY / CLOSE_UP / BACK / LIFESTYLE / DETAIL / FLAT_LAY. Select primary (best FULL_BODY) + secondary (best CLOSE_UP/BACK). Route best FULL_BODY to flat lay generator.</p>
+      <p><strong>Status:</strong> Core logic works (95-97% accuracy on test). 4 fixes pending: coverage tiering, CLOSE_UP fallback, primary≠secondary, currency headers. Need to confirm fixes are pushed to repo.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num done">4</div>
+    <div class="step-body">
+      <h4>v8.1 Attribute Extraction (GPT-4o) ✅</h4>
+      <p>Primary image → hard attributes (category, color, silhouette, length, neckline, sleeve, material, pattern, details). Both images → 11 axis scores + vibe computation. Per-attribute confidence → tiered routing (AUTO/REVIEW/MANUAL).</p>
+      <p><strong>Status:</strong> Working. 260 products extracted. Taste Lab validation in progress. v8.2 prompt guard identified (image beats metadata).</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num done">5</div>
+    <div class="step-body">
+      <h4>Variant C Flat Lay Generation (Gemini) ✅</h4>
+      <p>Takes FULL_BODY image → generates clean transparent-background flat lay of the garment only. Uses SKU category to extract the right piece when model wears multiple items.</p>
+      <p><strong>Status:</strong> Variant C selected as production generator (30/30 benchmark). D-style QA layer to be added post-generation. Nano Banana Pro tested on 6 TOD products — all successful.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num pending">6</div>
+    <div class="step-body">
+      <h4>Shop the Look + Outfit Creator Composition ⚠️</h4>
+      <p>Clean flat lays feed into AI-generated outfit compositions. 3 layers: brand's own sets, cross-brand AI pairings, product + closet basics. Appears on homepage, chatbot, and PDP.</p>
+      <p><strong>Status:</strong> Not built yet. Depends on flat lay generation working at scale. Task 4 in Rahul's wave plan (system design spec).</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num done">7</div>
+    <div class="step-body">
+      <h4>QA / Taste Lab Review ✅</h4>
+      <p>AUTO products → publish. REVIEW products → human quick-check. MANUAL products → full review. Axis Scoring Rubric embedded. Calibration data exported for v8.2 improvements.</p>
+      <p><strong>Status:</strong> Live at gtf-axis-testing.vercel.app. 186 active products. 74 lookbook products paused (source data contamination). Rahul built + shipped 5 tool improvements.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num blocked">8</div>
+    <div class="step-body">
+      <h4>Live on Platform 🔴</h4>
+      <p>Products appear on GTF with correct attributes, vibes, flat lay images, Shop the Look cards, and Outfit Creator availability.</p>
+      <p><strong>Status:</strong> Blocked until steps 3 + 6 are complete.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Why MediaPipe Must Be Locked ASAP</h2>
+
+<div class="highlight">
+  <h4>🔴 MediaPipe is the single point of failure in the entire pipeline</h4>
+  <p>Every downstream step depends on MediaPipe correctly selecting the right images. If it picks the wrong primary image:</p>
+</div>
+
+<table>
+  <tr><th>Downstream System</th><th>What Breaks</th><th>Customer Impact</th></tr>
+  <tr><td><strong>Attribute Extraction</strong></td><td>GPT-4o extracts attributes from wrong image → wrong category, color, silhouette</td><td>Product shows up in wrong vibes, wrong search results</td></tr>
+  <tr><td><strong>Axis Scoring</strong></td><td>11-axis scores based on wrong garment → wrong vibe ranking</td><td>Sequin gown ranked as "Old Money", kaftan ranked as "Cool Girl"</td></tr>
+  <tr><td><strong>Flat Lay Generation</strong></td><td>Variant C extracts wrong garment or partial garment from wrong image</td><td>Shop the Look shows wrong/broken product images</td></tr>
+  <tr><td><strong>Shop the Look</strong></td><td>Bad flat lays → ugly/incorrect outfit compositions</td><td>Homepage looks broken, cross-brand styling fails</td></tr>
+  <tr><td><strong>Outfit Creator</strong></td><td>Products with wrong images can't be styled together coherently</td><td>Customer builds outfit with mismatched pieces</td></tr>
+  <tr><td><strong>Taste Lab</strong></td><td>Reviewers validate wrong products → calibration data is noise</td><td>Model improvements based on bad data → system gets worse</td></tr>
+  <tr><td><strong>Brand Dashboard</strong></td><td>Brand sees wrong images for their products</td><td>Brand loses trust, leaves platform</td></tr>
+</table>
+
+<div class="highlight amber">
+  <h4>⚠️ We already experienced this failure</h4>
+  <p>During axis testing, 74 lookbook products (Surily G + Shahin Mannan) were extracted from the WRONG images due to an image resolver bug. GPT confidently extracted attributes for a completely different garment. A kaftan was classified as a "saree" with 0.95 confidence because the wrong lookbook page was fed in. <strong>MediaPipe would have prevented this</strong> — it would have classified each page and selected the correct FULL_BODY shot regardless of filename ambiguity.</p>
+</div>
+
+<h2>What's Working vs What's Blocked</h2>
+
+<table>
+  <tr><th>Component</th><th>Status</th><th>Blocker</th></tr>
+  <tr><td>CSV parsing (3 formats)</td><td style="color:#22C55E;font-weight:700;">✅ Working</td><td>—</td></tr>
+  <tr><td>Drive image download (Pattern 3+4)</td><td style="color:#22C55E;font-weight:700;">✅ Working</td><td>—</td></tr>
+  <tr><td>MediaPipe classification core</td><td style="color:#22C55E;font-weight:700;">✅ Working</td><td>—</td></tr>
+  <tr><td>MediaPipe 4 fixes</td><td style="color:#F59E0B;font-weight:700;">⚠️ Pending confirmation</td><td>Need to verify fixes are in the repo</td></tr>
+  <tr><td>Shopify pattern (Pattern 1)</td><td style="color:#F59E0B;font-weight:700;">⚠️ Untested</td><td>Need ITRH test</td></tr>
+  <tr><td>v8.1 attribute extraction</td><td style="color:#22C55E;font-weight:700;">✅ Working</td><td>—</td></tr>
+  <tr><td>Variant C flat lay</td><td style="color:#22C55E;font-weight:700;">✅ Working</td><td>—</td></tr>
+  <tr><td>End-to-end pipeline wiring</td><td style="color:#EF4444;font-weight:700;">🔴 Not done</td><td>Steps run independently, not as one command</td></tr>
+  <tr><td>Shop the Look composition</td><td style="color:#EF4444;font-weight:700;">🔴 Not built</td><td>Task 4 system design</td></tr>
+  <tr><td>Taste Lab</td><td style="color:#22C55E;font-weight:700;">✅ Live</td><td>74 products paused (source data)</td></tr>
+</table>
+
+<h2>The 3 Brand Format Patterns</h2>
+
+<table>
+  <tr><th>Pattern</th><th>How Brand Sends Images</th><th>Example Brand</th><th>Status</th></tr>
+  <tr><td><strong>1. Shopify URLs</strong></td><td>Direct CDN links in CSV columns</td><td>ITRH, LEH Studios</td><td style="color:#F59E0B;">Untested</td></tr>
+  <tr><td><strong>3. Drive Folder per Product</strong></td><td>One Google Drive folder link per product, 3-12 images inside</td><td>Bobo, Try On Dress</td><td style="color:#22C55E;">✅ Working</td></tr>
+  <tr><td><strong>4. Master Drive Folder</strong></td><td>One big folder, system matches SKUs to subfolders</td><td>Afro Nikitha</td><td style="color:#22C55E;">✅ Working</td></tr>
+</table>
+
+<h2>Immediate Action Items</h2>
+
+<div class="highlight green">
+  <h4>What we're doing now</h4>
+  <p>1. Getting the pipeline repo from Mukesh to run end-to-end ourselves<br>
+  2. Verifying the 4 MediaPipe fixes are implemented (or implementing them ourselves)<br>
+  3. Testing Pattern 1 (Shopify) with ITRH<br>
+  4. Continuing Taste Lab review on the 186 clean products<br>
+  5. Brand outreach — 18 brands emailed, follow-ups scheduled</p>
+</div>
+
+<h3>For Rahul specifically</h3>
+<ul>
+  <li><strong>Task 4 (Shop the Look system design)</strong> is blocked until we provide 3 reference examples: (1) a brand's pre-made product set, (2) a cross-brand AI-generated pairing, (3) a product + closet basics composition. We are preparing these.</li>
+  <li><strong>The flat lay → composition step</strong> is the gap between "we have clean product data" and "products appear beautifully on the homepage". This cannot be designed without seeing real flat lay outputs from the pipeline.</li>
+  <li><strong>Wave 2 tasks</strong> — most depend on MediaPipe being locked first. PDP migration needs correct images to migrate. Confidence formula needs trustworthy inputs to score. <strong>Only pill rendering</strong> (pure frontend UI) can proceed independently.</li>
+  <li><strong>v8.2 prompt guard</strong> ("image beats metadata") — findings captured from Taste Lab. Will be applied when we iterate the extraction prompt. Not actionable until Taste Lab review reaches 30-50 products.</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+<p style="font-size:15px;font-weight:600;text-align:center;padding:20px 0;">
+  MediaPipe image classification is the foundation. Lock it → attributes are accurate → flat lays are clean → Shop the Look works → Outfit Creator works → vibes are trustworthy → GTF delivers on its promise.
+</p>
+<p style="text-align:center;color:#666;">
+  Without reliable image classification, we're building a skyscraper on sand. Every feature we've designed — AI discovery, cross-brand styling, virtual try-on, brand dashboards — assumes the product data entering the system is correct. MediaPipe is what makes it correct.
+</p>
+
+<div class="footer">
+  GTF Discovery Engine · Pipeline Architecture v1 · May 15, 2026<br>
+  Prepared by Zoya for Rahul
+</div>
+
+</body>
+</html>

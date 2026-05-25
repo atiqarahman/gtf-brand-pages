@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit — Brand Partnership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gtf-purple: #7c3aed;
+  --gtf-purple-light: #ede9fe;
+  --gtf-purple-dark: #5b21b6;
+  --gtf-gradient: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+  --gtf-gradient-soft: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #faf5ff 100%);
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted: #6b7280;
+  --bg-white: #ffffff;
+  --bg-soft: #fafafa;
+  --bg-card: #f9fafb;
+  --border: #e5e7eb;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* COVER / HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  background: var(--bg-white);
+  position: relative;
+}
+
+.hero-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gtf-purple);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  background: var(--gtf-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gtf-gradient);
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+
+.hero-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.hero-meta strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* SECTIONS */
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.section-break {
+  border-top: 1px solid var(--border);
+}
+
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--gtf-purple);
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-line {
+  width: 40px;
+  height: 3px;
+  background: var(--gtf-gradient);
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+
+.section p.lead {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+/* BULLETS */
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bullet-list li {
+  padding-left: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.bullet-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.bullet-list li::before {
+  content: none;
+}
+
+.bullet-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--gtf-purple);
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* CALLOUT */
+.callout {
+  background: var(--bg-card);
+  border-left: 4px solid var(--gtf-purple);
+  padding: 24px 28px;
+  border-radius: 0 12px 12px 0;
+  margin: 32px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.callout strong {
+  color: var(--text-primary);
+}
+
+/* FEATURE GRID */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.feature-card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-white);
+  transition: border-color 0.2s;
+}
+
+.feature-card:hover {
+  border-color: var(--gtf-purple);
+}
+
+.feature-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* STAT CARDS */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-white);
+}
+
+.stat-card .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gtf-purple);
+  margin-bottom: 8px;
+}
+
+.stat-card .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* SCREENSHOT */
+.screenshot-wrap {
+  margin: 40px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.screenshot-wrap img {
+  width: 100%;
+  display: block;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 80px 24px;
+  background: var(--gtf-gradient-soft);
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--gtf-purple);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s;
+  margin-bottom: 16px;
+}
+
+.cta-btn:hover {
+  background: var(--gtf-purple-dark);
+}
+
+.cta-or {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.cta-or a {
+  color: var(--gtf-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* STEPS */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.step {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gtf-purple-light);
+  color: var(--gtf-purple);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.step h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer strong {
+  color: var(--text-primary);
+}
+
+/* CHECKLIST */
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.check-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.check-item {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.check-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gtf-purple);
+  font-weight: 700;
+}
+
+.need-item {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.need-item::before {
+  content: '📋';
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid { grid-template-columns: 1fr; }
+  .check-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="deck-img/gtf-logo.jpg" alt="GTF" style="width:120px; margin-bottom:16px;">
+  <div class="hero-brand">GET THE FIT</div>
+  <h1>Partnership <em>Proposal</em></h1>
+  <div class="hero-line"></div>
+  <p class="hero-sub">From Discovery to Cart. Frictionless.<br>The platform where emerging designer fashion meets AI-powered discovery.</p>
+  <div class="hero-meta">
+    <strong>Atiqa Rahman</strong>, CEO — Get The Fit<br>
+    2026 · Confidential
+  </div>
+  <div class="scroll-hint">↓ Scroll</div>
+</div>
+
+<!-- 01 PROBLEM -->
+<div class="section section-break">
+  <div class="section-num">01.</div>
+  <h2>The Problem We Solve</h2>
+  <div class="section-line"></div>
+  <p class="lead">Your customers are out there searching — but they can't find you.</p>
+  <ul class="bullet-list">
+    <li><span class="bullet-icon"></span><strong>74% of shoppers</strong> abandon carts due to decision fatigue and overwhelm</li>
+    <li><span class="bullet-icon"></span><strong>The Pinterest gap:</strong> 553M users save outfit inspiration monthly but can't buy what they see</li>
+    <li><span class="bullet-icon"></span><strong>Brand discovery is broken:</strong> emerging designers get buried under mass-market noise on traditional platforms</li>
+    <li><span class="bullet-icon"></span><strong>Cross-border is hard:</strong> MENA customers want global designers but face shipping complexity, duties confusion, and trust gaps</li>
+  </ul>
+</div>
+
+<!-- 02 WHAT WE DO -->
+<div class="section section-break" style="max-width:960px;">
+  <div class="section-num">02.</div>
+  <h2>What Get The Fit Does</h2>
+  <div class="section-line"></div>
+  <p class="lead">AI-powered fashion discovery marketplace. Venture-backed. NYC & Dubai.</p>
+
+  <div class="callout">
+    <strong>The conversion machine:</strong> A customer types <em>"cute summer outfits for London"</em> into our AI search — and we instantly surface the most relevant pieces from our curated designer catalog. No scrolling through thousands of products. No keyword guessing. Just natural language, like talking to a stylist friend. From there: she watches real people wearing it in shoppable UGC → builds a full outfit with your piece as the anchor → reads your brand story → checks out. No decision fatigue. No leaving to research on TikTok.
+  </div>
+
+  <!-- AI CHAT DISCOVERY -->
+  <div style="margin-top:48px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">AI Chat Discovery</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">Customers describe what they want in plain language — <em>"Hailey Bieber style dress for a beach wedding"</em> or <em>"old money outfit under $300"</em> — and our AI understands vibes, occasions, and aesthetics. Not just keywords. Real understanding.</p>
+    <div class="screenshot-wrap">
+      <img src="deck-img/ai-chat.jpg" alt="GTF AI Chat Discovery — natural language search results" loading="lazy">
+    </div>
+  </div>
+
+  <!-- SHOP THE LOOK -->
+  <div style="margin-top:56px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">Shop the Look — 3 Layers</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:16px;">Your pieces styled in complete, shoppable outfits. Three layers of styling that drive conversion:</p>
+    <ul class="bullet-list" style="margin-bottom:20px;">
+      <li><span class="bullet-icon"></span><strong>Brand's own looks:</strong> Your lookbook pairings, styled by you. On-model editorial images.</li>
+      <li><span class="bullet-icon"></span><strong>Cross-brand AI looks:</strong> GTF pairs your pieces with complementary items from other brands. Multi-brand bundled cart. This is the marketplace moat.</li>
+      <li><span class="bullet-icon"></span><strong>Closet basics:</strong> Your hero piece styled with wardrobe staples the customer already owns. Answers "how do I wear this?" — the #1 conversion blocker.</li>
+    </ul>
+    <div class="screenshot-wrap">
+      <img src="deck-img/shop-the-look.jpg" alt="GTF Shop the Look — bundled outfit cart" loading="lazy" style="max-height:400px; width:auto; margin:0 auto; display:block;">
+    </div>
+  </div>
+
+  <!-- VIRTUAL TRY-ON -->
+  <div style="margin-top:56px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">Virtual Try-On</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">AI-powered try-on on every product page. Customers see how your pieces look on them before buying. Reduces returns, increases conversion and purchase confidence.</p>
+    <div class="screenshot-wrap">
+      <img src="deck-img/virtual-tryon.jpg" alt="GTF Virtual Try-On" loading="lazy">
+    </div>
+  </div>
+
+  <!-- BRAND PAGES -->
+  <div style="margin-top:56px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">Brand Pages</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">Your story, your aesthetic, your collection — not a generic product grid. Every brand gets a dedicated page that showcases who you are, with designer profiles, collection stories, and curated shopping.</p>
+    <div class="screenshot-wrap">
+      <img src="deck-img/designer-showcase.jpg" alt="GTF Designer Showcase — Our Designers" loading="lazy">
+    </div>
+  </div>
+
+  <!-- SHOPPABLE UGC -->
+  <div style="margin-top:56px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">Shoppable UGC</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">Real people wearing your pieces. Video-first. Customers tap to shop the exact look — from community content that feels authentic, not ads.</p>
+    <div class="screenshot-wrap">
+      <img src="deck-img/shoppable-ugc.jpg" alt="GTF Shoppable UGC — Spotlight" loading="lazy">
+    </div>
+  </div>
+
+  <!-- VIBE DISCOVERY MOAT -->
+  <div style="margin-top:56px; padding:40px 32px; background:var(--gtf-gradient-soft); border-radius:20px;">
+    <h3 style="font-size:22px; font-family:'Playfair Display',serif; margin-bottom:12px;">Our Moat: Vibe-Based Discovery</h3>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:16px;">Here's the truth: your brand is unknown to most customers. They don't search for your name — they search for a <em>vibe</em>. "Old Money aesthetic." "Sexy Elegant for Dubai." "Cool Girl going-out look."</p>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;">GTF maps every brand and product to the vibes trending on social media. When a customer searches by vibe, YOUR pieces surface — even if they've never heard of you. That's how unknown brands become discovered brands.</p>
+    <div class="screenshot-wrap" style="margin-bottom:12px;">
+      <img src="deck-img/vibe-nav.jpg" alt="GTF Vibe Navigation — Old Money, Glam, Cool Girl, Sexy Elegant" loading="lazy">
+    </div>
+    <div class="screenshot-wrap">
+      <img src="deck-img/vibe-page.jpg" alt="GTF Shop by Vibe — Sexy Elegant" loading="lazy">
+    </div>
+  </div>
+
+  <!-- VIEW LIVE -->
+  <div style="text-align:center; margin-top:48px;">
+    <p style="font-size:16px; color:var(--text-secondary); margin-bottom:16px;">See it all in action:</p>
+    <a href="https://dev.getthefit.ai" target="_blank" class="cta-btn" style="background:var(--text-primary);">View Live Platform →</a>
+  </div>
+</div>
+
+<!-- 03 NUMBERS -->
+<div class="section section-break">
+  <div class="section-num">03.</div>
+  <h2>The Numbers</h2>
+  <div class="section-line"></div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">$60K</div>
+      <div class="label">GMV in first<br>3 months</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">$16K</div>
+      <div class="label">From one brand<br>at UAE pop-up</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">25+</div>
+      <div class="label">Brand partners<br>globally</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">VC</div>
+      <div class="label">Venture-backed<br>(Antler)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 LOGISTICS -->
+<div class="section section-break">
+  <div class="section-num">04.</div>
+  <h2>How We Handle Logistics</h2>
+  <div class="section-line"></div>
+  <p class="lead">You focus on design. We handle everything else.</p>
+  <ul class="bullet-list">
+    <li><span class="bullet-icon"></span><strong>DDP Shipping</strong> — Delivered Duty Paid into MENA. Customer sees final price upfront. No surprises at customs.</li>
+    <li><span class="bullet-icon"></span><strong>DHL + Zonos</strong> — Duties, taxes, and shipping pre-calculated. Cross-border made simple.</li>
+    <li><span class="bullet-icon"></span><strong>Zero upfront cost</strong> — Commission-based model. You only pay when you sell.</li>
+    <li><span class="bullet-icon"></span><strong>Brand Dashboard</strong> — Real-time analytics: search queries, vibe performance, conversion data, demographics.</li>
+  </ul>
+</div>
+
+<!-- 05 WHO WE WORK WITH -->
+<div class="section section-break">
+  <div class="section-num">05.</div>
+  <h2>Who We Work With</h2>
+  <div class="section-line"></div>
+  <p class="lead">Emerging global designers from India, Vietnam, UK, Europe, Australia, and beyond.</p>
+  <p style="font-size:16px; color: var(--text-secondary); line-height:1.7; margin-bottom:20px;">Brands that are too good for Zara's customer but haven't reached Farfetch's audience yet. Investment pieces from $70–$3,000. Designers with strong aesthetic DNA and a story worth telling.</p>
+  <div class="callout">
+    <strong>Our customer:</strong> Women 17–35, city dwellers, Instagram/Pinterest power users. They know what they want but can't find it. They have mood boards full of looks they can't buy. GTF solves that.
+  </div>
+</div>
+
+<!-- 06 NEXT STEPS -->
+<div class="cta-section">
+  <div class="section-num">06.</div>
+  <h2>Next Steps</h2>
+  <div style="width:40px;height:3px;background:var(--gtf-gradient);border-radius:2px;margin:12px auto 32px;"></div>
+
+  <div class="steps" style="max-width:800px; margin:0 auto 40px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Quick intro call</h4>
+      <p>15 mins to understand your brand, goals, and if we're a good fit.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Share your catalog</h4>
+      <p>Product feed, brand assets, and hero pieces you want featured.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>We build your presence</h4>
+      <p>Brand story, shoppable content, AI training on your products.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Go live</h4>
+      <p>Start reaching global customers. You ship, we handle everything else.</p>
+    </div>
+  </div>
+
+  <a href="https://calendly.com/atiqa-getthefit/30min" class="cta-btn">Book a 30-minute call</a>
+
+  <div class="cta-or">Or reply to this email — happy to answer any questions.</div>
+
+  <div class="check-grid" style="max-width:600px; margin:40px auto 0; text-align:left;">
+    <div class="check-col">
+      <h4>✓ What you get</h4>
+      <div class="check-item">Global customer access (UAE, UK, US, EU)</div>
+      <div class="check-item">Real-time customer insights & data</div>
+      <div class="check-item">AI-powered product discovery</div>
+      <div class="check-item">Shoppable content & brand storytelling</div>
+      <div class="check-item">Zero logistics headaches — we handle it</div>
+    </div>
+    <div class="check-col">
+      <h4>📋 What we need from you</h4>
+      <div class="need-item">Product feed (Shopify, CSV, or manual)</div>
+      <div class="need-item">Brand assets (logo, hero images, story)</div>
+      <div class="need-item">Shipping SLA (we'll coordinate the rest)</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Atiqa Rahman</strong> · Founder, Get The Fit<br>
+  ✉️ atiqa@getthefit.ai · 📸 @atiqagetthefit<br><br>
+  Get The Fit — AI-Powered Fashion Discovery · Venture-Backed · NYC & Dubai<br>
+  <a href="https://dev.getthefit.ai" style="color:var(--gtf-purple); text-decoration:none;">dev.getthefit.ai</a> · 2026 · Confidential
+</div>
+
+</body>
+</html>

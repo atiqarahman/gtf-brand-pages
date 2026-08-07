@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTF Logo Reference — For Jameel</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+  .label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .specs {
+    font-family: monospace;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* VERSION 1 — Gradient Background */
+  .v1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .v1 {
+    background: linear-gradient(90deg, #C5CEE8 0%, #92BEE3 33%, #83C9F7 66%, #A2CDFF 100%);
+    padding: 60px 100px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .v1 .brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 52px;
+    color: #000;
+    letter-spacing: 6px;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .v1 .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 4px;
+    margin-top: 12px;
+    opacity: 0.7;
+  }
+
+  /* VERSION 2 — Transparent */
+  .v2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .v2-wrapper {
+    /* Checkerboard to show transparency */
+    background-image: 
+      linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+      linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+      linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    padding: 60px 100px;
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+  }
+  .v2 {
+    text-align: center;
+  }
+  .v2 .brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 52px;
+    color: #000;
+    letter-spacing: 6px;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .v2 .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 4px;
+    margin-top: 12px;
+    opacity: 0.7;
+  }
+
+  /* Website header mockup */
+  .header-mockup {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-bar {
+    width: 100%;
+    background: #fff;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .header-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #000;
+    letter-spacing: 4px;
+  }
+  .header-nav {
+    display: flex;
+    gap: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* Gradient header version */
+  .header-bar-gradient {
+    width: 100%;
+    background: linear-gradient(90deg, #C5CEE8 0%, #92BEE3 33%, #83C9F7 66%, #A2CDFF 100%);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<h1>GTF Logo Reference — Visual Guide for Designer</h1>
+
+<!-- VERSION 1 -->
+<div class="v1-container">
+  <div class="label">Version 1 — Gradient Background</div>
+  <div class="v1">
+    <p class="brand">get the fit</p>
+    <p class="slogan">your personal fashion ai agent</p>
+  </div>
+  <div class="specs">
+    Font: Montserrat Light (300) · All lowercase · Letter spacing: 6px<br>
+    Gradient: #C5CEE8 → #92BEE3 → #83C9F7 → #A2CDFF (left to right)<br>
+    Text: Black (#000000) · Slogan opacity: 70%<br>
+    Export: PNG + SVG
+  </div>
+</div>
+
+<!-- VERSION 2 -->
+<div class="v2-container">
+  <div class="label">Version 2 — Transparent Background (for website header)</div>
+  <div class="v2-wrapper">
+    <div class="v2">
+      <p class="brand">get the fit</p>
+      <p class="slogan">your personal fashion ai agent</p>
+    </div>
+  </div>
+  <div class="specs">
+    Same font + sizing as Version 1<br>
+    Background: Transparent (checkerboard = transparency)<br>
+    Text: Black (#000000)<br>
+    Export: PNG (transparent) + SVG
+  </div>
+</div>
+
+<!-- HEADER MOCKUPS -->
+<div class="header-mockup">
+  <div class="label">How it looks on website header — White bg</div>
+  <div class="header-bar">
+    <span class="header-brand">get the fit</span>
+    <div class="header-nav">
+      <span>New In</span>
+      <span>Brands</span>
+      <span>AI Discovery</span>
+      <span>Shop the Look</span>
+    </div>
+  </div>
+
+  <div class="label" style="margin-top: 30px;">How it looks on website header — Gradient bg</div>
+  <div class="header-bar-gradient">
+    <span class="header-brand">get the fit</span>
+    <div class="header-nav">
+      <span>New In</span>
+      <span>Brands</span>
+      <span>AI Discovery</span>
+      <span>Shop the Look</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

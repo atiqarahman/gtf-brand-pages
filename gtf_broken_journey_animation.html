@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTF — The Broken Journey Animation</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+    color: #1A1A1A;
+    overflow-x: hidden;
+  }
+
+  /* ============ SECTION 1: THE BROKEN JOURNEY ============ */
+  .broken-journey {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    background: #fafafa;
+  }
+
+  .broken-journey h2 {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .broken-journey h1 {
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+
+  /* The journey flow */
+  .journey-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+    margin-bottom: 60px;
+  }
+
+  .journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    position: relative;
+  }
+
+  .journey-step .step-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+    transition: all 0.4s ease;
+  }
+
+  .journey-step .step-label {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  .journey-arrow {
+    font-size: 18px;
+    color: #ccc;
+    margin: 0 16px;
+    margin-bottom: 24px;
+    opacity: 0;
+  }
+
+  /* Frustration state */
+  .journey-step.frustrated .step-circle {
+    border-color: #e74c3c;
+    background: #fef2f2;
+  }
+
+  .journey-step.frustrated .step-label {
+    color: #e74c3c;
+    font-weight: 500;
+  }
+
+  /* Animation delays for sequential appearance */
+  .journey-step:nth-child(1) { animation: fadeUp 0.5s ease forwards 1.0s; }
+  .journey-arrow:nth-child(2) { animation: fadeUp 0.3s ease forwards 1.4s; }
+  .journey-step:nth-child(3) { animation: fadeUp 0.5s ease forwards 1.7s; }
+  .journey-arrow:nth-child(4) { animation: fadeUp 0.3s ease forwards 2.1s; }
+  .journey-step:nth-child(5) { animation: fadeUp 0.5s ease forwards 2.4s; }
+  .journey-arrow:nth-child(6) { animation: fadeUp 0.3s ease forwards 2.8s; }
+  .journey-step:nth-child(7) { animation: fadeUp 0.5s ease forwards 3.1s; }
+  .journey-arrow:nth-child(8) { animation: fadeUp 0.3s ease forwards 3.5s; }
+  .journey-step:nth-child(9) { animation: fadeUp 0.5s ease forwards 3.8s; }
+  .journey-arrow:nth-child(10) { animation: fadeUp 0.3s ease forwards 4.2s; }
+  .journey-step:nth-child(11) { animation: fadeUp 0.6s ease forwards 4.5s; }
+
+  /* Frustrated caption */
+  .frustrated-caption {
+    font-size: 16px;
+    font-weight: 300;
+    color: #e74c3c;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 5.2s;
+    letter-spacing: 1px;
+  }
+
+  /* ============ SECTION 2: THE GTF WAY ============ */
+  .gtf-way {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #C5CEE8 0%, #92BEE3 33%, #83C9F7 66%, #A2CDFF 100%);
+  }
+
+  .gtf-way h2 {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+  }
+
+  .gtf-way h1 {
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #000;
+    max-width: 500px;
+    line-height: 1.4;
+  }
+
+  .gtf-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 60px;
+  }
+
+  .gtf-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gtf-step .step-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  .gtf-step .step-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+  }
+
+  .gtf-step .step-sublabel {
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.4);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .gtf-arrow {
+    font-size: 18px;
+    color: rgba(0,0,0,0.3);
+    margin: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .gtf-tagline {
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    letter-spacing: 2px;
+  }
+
+  /* ============ SECTION 3: PILLARS ============ */
+  .pillars {
+    padding: 100px 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pillars h2 {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 60px;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    max-width: 960px;
+  }
+
+  .pillar {
+    text-align: center;
+    padding: 32px 16px;
+  }
+
+  .pillar-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+  }
+
+  .pillar-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #1A1A1A;
+    fill: none;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .pillar h3 {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #1A1A1A;
+  }
+
+  .pillar p {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #666;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    .journey-flow, .gtf-flow {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .journey-arrow, .gtf-arrow {
+      display: none;
+    }
+    .broken-journey h1, .gtf-way h1 {
+      font-size: 26px;
+    }
+    .pillars-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+
+  /* Dev notes section */
+  .dev-notes {
+    background: #f8f8f8;
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 2;
+    color: #666;
+  }
+  .dev-notes h3 {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #999;
+  }
+  .dev-notes code {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SECTION 1: THE BROKEN JOURNEY ============ -->
+<section class="broken-journey">
+  <h2>The Problem</h2>
+  <h1>Sound familiar?</h1>
+  
+  <div class="journey-flow">
+    <div class="journey-step">
+      <div class="step-circle">📱</div>
+      <span class="step-label">See it on IG</span>
+    </div>
+    <span class="journey-arrow">→</span>
+    
+    <div class="journey-step">
+      <div class="step-circle">🔍</div>
+      <span class="step-label">Google it</span>
+    </div>
+    <span class="journey-arrow">→</span>
+    
+    <div class="journey-step">
+      <div class="step-circle">📌</div>
+      <span class="step-label">Pinterest</span>
+    </div>
+    <span class="journey-arrow">→</span>
+    
+    <div class="journey-step">
+      <div class="step-circle">🎵</div>
+      <span class="step-label">TikTok reviews</span>
+    </div>
+    <span class="journey-arrow">→</span>
+    
+    <div class="journey-step">
+      <div class="step-circle">🌐</div>
+      <span class="step-label">Brand site</span>
+    </div>
+    <span class="journey-arrow">→</span>
+    
+    <div class="journey-step frustrated">
+      <div class="step-circle">✕</div>
+      <span class="step-label">Give up</span>
+    </div>
+  </div>
+  
+  <p class="frustrated-caption">5 apps. 30 minutes. No purchase.</p>
+</section>
+
+<!-- ============ SECTION 2: THE GTF WAY ============ -->
+<section class="gtf-way">
+  <h2>The Solution</h2>
+  <h1>One place. One journey.</h1>
+  
+  <div class="gtf-flow">
+    <div class="gtf-step">
+      <div class="step-circle">💬</div>
+      <span class="step-label">Discover</span>
+      <span class="step-sublabel">AI search by vibe</span>
+    </div>
+    <span class="gtf-arrow">→</span>
+    
+    <div class="gtf-step">
+      <div class="step-circle">👗</div>
+      <span class="step-label">Style</span>
+      <span class="step-sublabel">Shop the Look</span>
+    </div>
+    <span class="gtf-arrow">→</span>
+    
+    <div class="gtf-step">
+      <div class="step-circle">🪞</div>
+      <span class="step-label">Try On</span>
+      <span class="step-sublabel">Virtual fitting</span>
+    </div>
+    <span class="gtf-arrow">→</span>
+    
+    <div class="gtf-step">
+      <div class="step-circle">✓</div>
+      <span class="step-label">Trust</span>
+      <span class="step-sublabel">UGC & reviews</span>
+    </div>
+    <span class="gtf-arrow">→</span>
+    
+    <div class="gtf-step">
+      <div class="step-circle">🛒</div>
+      <span class="step-label">Buy</span>
+      <span class="step-sublabel">One checkout</span>
+    </div>
+  </div>
+  
+  <p class="gtf-tagline">get the fit</p>
+</section>
+
+<!-- ============ SECTION 3: PILLARS ============ -->
+<section class="pillars">
+  <h2>What We Stand For</h2>
+  
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="20" r="8"/>
+          <path d="M24 28c-8 0-14 4-14 8v4h28v-4c0-4-6-8-14-8z"/>
+          <line x1="34" y1="12" x2="42" y2="12"/>
+          <line x1="38" y1="8" x2="38" y2="16"/>
+        </svg>
+      </div>
+      <h3>Curation</h3>
+      <p>Every brand hand-selected for design excellence, quality craftsmanship and a point of view that matters.</p>
+    </div>
+    
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 48 48">
+          <rect x="8" y="8" width="32" height="32" rx="4"/>
+          <circle cx="24" cy="24" r="6"/>
+          <line x1="24" y1="8" x2="24" y2="18"/>
+          <line x1="24" y1="30" x2="24" y2="40"/>
+          <line x1="8" y1="24" x2="18" y2="24"/>
+          <line x1="30" y1="24" x2="40" y2="24"/>
+        </svg>
+      </div>
+      <h3>Technology</h3>
+      <p>AI that understands fashion the way you experience it — through mood, aesthetic, trend and intent.</p>
+    </div>
+    
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 6L6 18v12c0 10 8 14 18 18 10-4 18-8 18-18V18L24 6z"/>
+          <polyline points="16 24 22 30 32 18"/>
+        </svg>
+      </div>
+      <h3>Trust</h3>
+      <p>UGC videos, brand stories, virtual try-on and direct chat — so you buy with confidence, not hope.</p>
+    </div>
+    
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 48 48">
+          <circle cx="16" cy="20" r="6"/>
+          <circle cx="32" cy="20" r="6"/>
+          <path d="M16 26c-6 0-10 3-10 6v4h20v-4c0-3-4-6-10-6z"/>
+          <path d="M32 26c-3 0-5.5 1-7.5 2.5"/>
+          <path d="M42 36v-4c0-3-4-6-10-6"/>
+        </svg>
+      </div>
+      <h3>Community</h3>
+      <p>Every purchase supports an independent designer. Every discovery introduces you to someone's life's work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEV NOTES ============ -->
+<div class="dev-notes">
+  <h3>Implementation Notes for Jameel</h3>
+  
+  <strong>Section 1 — Broken Journey:</strong><br>
+  • Steps animate in sequentially (left to right, ~0.5s delay each)<br>
+  • Use <code>IntersectionObserver</code> to trigger animation on scroll into view<br>
+  • Last step ("Give up") has red accent — frustrated state<br>
+  • Caption fades in after all steps complete<br>
+  • Consider subtle connecting line/dots between steps instead of arrow text<br>
+  • Emojis are placeholders — replace with thin line SVG icons matching the pillar style<br><br>
+  
+  <strong>Section 2 — GTF Way:</strong><br>
+  • Gradient background uses GTF brand colors: <code>#C5CEE8 → #92BEE3 → #83C9F7 → #A2CDFF</code><br>
+  • Steps can also animate sequentially on scroll<br>
+  • Circles have frosted glass effect (<code>backdrop-filter: blur</code>)<br>
+  • Sub-labels show the specific GTF feature for each step<br>
+  • "What We Built" product screenshots: pull from Figma designs<br><br>
+  
+  <strong>Section 3 — Pillars:</strong><br>
+  • Icons are thin black line SVGs — no colour fills, no emoji<br>
+  • Hover state: subtle scale or opacity shift, nothing flashy<br>
+  • 4-column on desktop, 2-column on mobile<br>
+  • Font: Montserrat throughout (matches new logo)<br><br>
+  
+  <strong>General:</strong><br>
+  • All animations: subtle fade-up on scroll, use <code>IntersectionObserver</code><br>
+  • Mobile-first — test on 375px width<br>
+  • Emojis in circles are PLACEHOLDERS — replace with consistent thin-line SVG icons<br>
+  • Typography: Montserrat Light (300) for body, Regular (400) for headings<br>
+</div>
+
+</body>
+</html>

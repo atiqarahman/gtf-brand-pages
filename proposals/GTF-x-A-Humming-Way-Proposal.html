@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit × A Humming Way — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --lavender: #C8CEEB;
+    --periwinkle: #B2B6E3;
+    --light-blue: #B2D9EF;
+    --sky-blue: #A3DFF5;
+    --dark: #0a0a0a;
+    --card-bg: #151515;
+    --text-primary: #fff;
+    --text-secondary: #bbb;
+    --text-muted: #888;
+    --text-dim: #666;
+    --border: #222;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--dark);
+    color: #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 60px 48px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  h1 { font-family: 'Inter', sans-serif; font-size: 42px; font-weight: 300; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.5px; }
+  h2 { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 300; color: var(--text-primary); margin-bottom: 12px; letter-spacing: -0.3px; }
+  h3 { font-size: 13px; font-weight: 600; background: linear-gradient(135deg, var(--lavender), var(--sky-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px; }
+  p { font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+  .bold { font-weight: 700; color: var(--text-primary); }
+
+  .cover { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; position: relative; overflow: hidden; }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200, 206, 235, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(163, 223, 245, 0.06) 0%, transparent 50%);
+    z-index: 0;
+  }
+  .cover > * { position: relative; z-index: 1; }
+  
+  .cover .logo-text { font-size: 48px; font-weight: 300; letter-spacing: -1px; color: var(--text-primary); margin-bottom: 4px; }
+  .cover .logo-tagline { font-size: 14px; font-weight: 400; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 40px; }
+  .cover .brand-x { font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; background: linear-gradient(135deg, var(--lavender), var(--sky-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+  .cover h1 { font-size: 52px; font-weight: 300; margin-bottom: 20px; }
+  .cover .tagline { font-size: 18px; font-weight: 300; font-style: italic; color: var(--text-muted); margin-bottom: 40px; }
+  .cover .hook { font-size: 14px; color: #999; max-width: 480px; margin: 0 auto 48px; line-height: 1.7; }
+  .cover .footer { font-size: 11px; color: #555; letter-spacing: 1px; }
+  
+  .gradient-line { width: 120px; height: 2px; background: linear-gradient(90deg, var(--lavender), var(--periwinkle), var(--light-blue), var(--sky-blue)); margin: 24px auto; border-radius: 1px; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+  .stat-box { background: var(--card-bg); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid var(--border); }
+  .stat-box .num { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, var(--lavender), var(--sky-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-box .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .query-card { background: var(--card-bg); border-left: 3px solid; border-image: linear-gradient(180deg, var(--lavender), var(--sky-blue)) 1; padding: 16px 20px; border-radius: 0 10px 10px 0; margin-bottom: 12px; }
+  .query-card .query { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+  .query-card .result { font-size: 12px; color: var(--text-muted); }
+
+  .screenshot { width: 100%; border-radius: 12px; margin: 16px 0; box-shadow: 0 4px 24px rgba(178, 182, 227, 0.08); border: 1px solid var(--border); }
+  .caption { font-size: 11px; color: var(--text-dim); text-align: center; margin-bottom: 20px; font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { background: linear-gradient(135deg, var(--periwinkle), var(--light-blue)); color: var(--dark); font-weight: 600; text-align: left; padding: 12px 16px; }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: #ccc; }
+  tr:nth-child(even) td { background: #111; }
+
+  .toolkit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .tool-card { background: var(--card-bg); border-left: 3px solid; border-image: linear-gradient(180deg, var(--lavender), var(--sky-blue)) 1; border-radius: 0 10px 10px 0; padding: 16px 20px; }
+  .tool-card h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .tool-card p { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+  .cta-box { text-align: center; padding: 40px; background: linear-gradient(135deg, rgba(200,206,235,0.05), rgba(163,223,245,0.05)); border: 1px solid var(--border); border-radius: 16px; margin: 24px 0; }
+  .cta-box a.cta-btn { display: inline-block; padding: 16px 48px; background: linear-gradient(135deg, var(--periwinkle), var(--light-blue)); color: var(--dark); text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 14px; margin: 12px 0; }
+  .cta-link { background: linear-gradient(135deg, var(--lavender), var(--sky-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; font-weight: 600; }
+
+  @media print {
+    body { background: var(--dark); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="logo-text">get the fit</div>
+  <div class="logo-tagline">your personal fashion ai agent</div>
+  <div class="gradient-line"></div>
+  <div class="brand-x">GET THE FIT × A HUMMING WAY</div>
+  <h1>Partnership Proposal</h1>
+  <div class="tagline">Experimental Khaadi. Artisan Couture. Global Discovery.</div>
+  <div class="hook">The platform where Mumbai's most experimental textile house meets AI-powered global fashion discovery.</div>
+  <div class="gradient-line"></div>
+  <div class="footer">PREPARED EXCLUSIVELY FOR A HUMMING WAY<br>By Atiqa Rahman, CEO — Get The Fit · November 2026</div>
+</div>
+
+<!-- PAGE 2: THE DISCOVERY GAP -->
+<div class="page">
+  <h3>The Problem</h3>
+  <h2>The Discovery Gap Your Customers Face</h2>
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A woman in New York is looking for something special — a statement jacket that's artisanal, not mass-produced. She wants texture, craftsmanship, something with a story. She searches online. She finds Zimmermann, Ulla Johnson, Dries Van Noten. She can't find you. That sale — and the hand-woven Khaadi jacket she would have fallen in love with — is lost to a brand with a bigger marketing budget.</p>
+  <p>A Humming Way is something extraordinary: a luxury experimental label that reimagines centuries-old Indian textiles — Khaadi, handloom, vegan fabrics — through a radically contemporary lens. Founded by Sweta Agrawal in 2017, AHW has already showcased at New York Fashion Week twice and Alta Roma in Italy. Every garment is produced at your atelier in Juhu, Mumbai, with fabrics hand-woven by generational artisans in Ahmedabad and Rajasthan.</p>
+  <p style="color:#fff;font-weight:600;">International runways have validated your design. Now you need a platform that converts that global recognition into global sales — one that can communicate why a hand-woven Khaadi carpet jacket is worth ₹41,000 to a customer who's never touched the fabric.</p>
+  
+  <h3 style="margin-top:32px;">This Is How They Search on GTF</h3>
+  <img src="../platform-screenshots/hero-chatbot.jpg" class="screenshot" alt="GTF AI Search">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Our AI chatbot — customers describe what they feel, not keywords. "Curated emerging designers from around the world."</div>
+  
+  <h3 style="margin-top:24px;">What Your Customer Actually Searches For</h3>
+  <div class="query-card"><div class="query">"Handmade statement jacket — something no one else will have"</div><div class="result">→ GTF AI: category = jacket, quality = artisan/handmade, vibe = Unique Finds + Statement → surfaces AHW Carpet Jacket, Jaisalmer Jacket, Earth Jacket</div></div>
+  <div class="query-card"><div class="query">"Textured embroidered set for a wedding in Rajasthan"</div><div class="result">→ GTF AI: occasion = wedding, destination = Rajasthan, details = embroidery + texture → surfaces AHW Shikhar Baugh sets, Desert Rose Lehenga Jacket Set</div></div>
+  <div class="query-card"><div class="query">"Something elegant and nature-inspired for a gala"</div><div class="result">→ GTF AI: occasion = gala/formal, aesthetic = nature-inspired, vibe = Elegant → surfaces AHW Iris Collection, Barberry Kaftan, Arabesque Floating Gown</div></div>
+  <div class="query-card"><div class="query">"Luxury Indian designer — not traditional, more modern"</div><div class="result">→ GTF AI: origin = India, vibe = Contemporary + Experimental, price tier = luxury → surfaces AHW Prêt-à-Porter and Thar Monologue collections</div></div>
+  <div class="query-card"><div class="query">"Sustainable luxury — handwoven, not mass produced"</div><div class="result">→ GTF AI: material = handwoven/Khaadi, sustainability = artisan-made, price tier = luxury → surfaces AHW as the definitive answer</div></div>
+
+  <p style="margin-top:16px;">No traditional marketplace can process these queries. They rely on category filters. GTF's AI understands intent, vibe, occasion, material, and craft — and matches them to your product attributes.</p>
+</div>
+
+<!-- PAGE 3: THE PLATFORM -->
+<div class="page">
+  <h3>The Platform</h3>
+  <h2>The GTF Platform — Built for Discovery</h2>
+  
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">$60K+</div><div class="label">GMV in 3 months</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Curated brands</div></div>
+    <div class="stat-box"><div class="num">🚀</div><div class="label">Venture-backed (Antler)</div></div>
+    <div class="stat-box"><div class="num">UAE & NYC</div><div class="label">HQ · Global reach</div></div>
+  </div>
+  
+  <p>Get The Fit is an AI-powered fashion discovery marketplace — venture-backed by Antler, headquartered in UAE & NYC, serving customers globally. We bring the entire shopping journey into one place: from natural-language discovery to virtual try-on to multi-brand checkout.</p>
+  
+  <p>We curate emerging designers from India, UAE, Turkey, Brazil, and beyond — brands with extraordinary craftsmanship that deserve a global audience. A Humming Way's experimental approach to Indian textiles — Khaadi reimagined as luxury contemporary wear — is exactly the kind of design our customers are searching for and can't find anywhere else.</p>
+
+  <p><span class="bold">See it live:</span> <a href="https://dev.getthefit.ai" class="cta-link">dev.getthefit.ai →</a></p>
+
+  <h3 style="margin-top:24px;">Discover by Vibe</h3>
+  <img src="../platform-screenshots/our-designers.jpg" class="screenshot" alt="Our Designers">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Every brand has a dedicated page — their story, aesthetic, vibes, and full collection. Filterable by vibe and region.</div>
+  
+  <img src="../platform-screenshots/brand-vibes-dropdown.jpg" class="screenshot" alt="Vibe Navigation">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">A Humming Way would surface under Unique Finds, Elegant, Artisan Luxury, and Statement Dressing — reaching customers who search by feeling, not category.</div>
+</div>
+
+<!-- PAGE 4: FEATURES -->
+<div class="page">
+  <h3>Features</h3>
+  <h2>Outfit Creator + Cross-Brand Styling</h2>
+  <p>Customers build complete outfits mixing pieces from different designers. Your AHW Carpet Jacket gets paired with another brand's trousers — and both go into one cart. Your products get discovered by customers who came for another brand and leave with yours too.</p>
+  
+  <img src="../platform-screenshots/outfit-creator.jpg" class="screenshot" alt="Outfit Creator">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Outfit Creator — customers mix and match across brands. "Try On Me" brings it together.</div>
+  
+  <h3 style="margin-top:32px;">Shop the Look — Curated Outfit Pairings</h3>
+  <p>Editorial-to-commerce. Customers see a complete styled outfit, toggle items on or off, and add the whole look to their bag in one click. Your AHW pieces get styled alongside complementary brands — increasing average order value and driving cross-brand discovery.</p>
+  
+  <img src="../platform-screenshots/shop-the-look.jpg" class="screenshot" alt="Shop the Look">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Shop the Look — curated outfit pairings with "Save the Look" and one-click "Add to Bag"</div>
+
+  <h3 style="margin-top:32px;">Community Spotlight — Shoppable UGC</h3>
+  <p>Real looks from real customers. Every video and photo is shoppable — social proof that converts browsers into buyers. For AHW, this is especially powerful: your garments need to be seen in movement and light to communicate their texture and drape.</p>
+  
+  <img src="../platform-screenshots/spotlight-ugc.jpg" class="screenshot" alt="Spotlight">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Spotlight — shoppable UGC with engagement metrics. Real customers, real outfits, real purchases.</div>
+</div>
+
+<!-- PAGE 5: THE FIT -->
+<div class="page">
+  <h3>The Fit</h3>
+  <h2>Why A Humming Way Is a Perfect Partner</h2>
+  
+  <table>
+    <tr><th>A Humming Way DNA</th><th>GTF Positioning</th><th>Why It Converts</th></tr>
+    <tr><td>Experimental Khaadi &amp; handloom textiles</td><td>AI indexes material + craft technique as discovery signals</td><td>"Handwoven," "Khaadi," "artisan luxury" queries → AHW as the definitive result</td></tr>
+    <tr><td>NYFW × 2 + Alta Roma showcase</td><td>International validation as a trust signal</td><td>Runway credibility converts hesitant international buyers — "if it's good enough for NYFW…"</td></tr>
+    <tr><td>Atelier in Juhu, Mumbai + artisans in Ahmedabad &amp; Rajasthan</td><td>Provenance &amp; traceability as premium features</td><td>Name your artisans — Maidul, Pappu — transparency builds trust in a market full of greenwashing</td></tr>
+    <tr><td>₹19,000–₹129,000 price range</td><td>True luxury positioning</td><td>Positioned alongside international designer brands — your craft justifies the price, GTF communicates it</td></tr>
+    <tr><td>Prêt-à-Porter + Indian Festive + Blazer Edits</td><td>Cross-occasion discovery</td><td>A customer searching for a blazer discovers AHW's Carpet Jacket; searching for festive wear discovers the Desert Rose Lehenga</td></tr>
+    <tr><td>Vegan textiles + fair wages + sustainability</td><td>Sustainability as a verified search attribute</td><td>"Sustainable luxury" and "ethical fashion" queries → AHW (with proof, not marketing)</td></tr>
+  </table>
+  
+  <p style="margin-top:24px;color:#fff;font-size:15px;">A Humming Way has already proven it belongs on the global stage — NYFW and Alta Roma confirmed that. What's missing isn't validation, it's a conversion engine that can turn international attention into international sales, year-round. That's what GTF is built for.</p>
+</div>
+
+<!-- PAGE 6: GLOBAL OPPORTUNITY -->
+<div class="page">
+  <h3>The Opportunity</h3>
+  <h2>Your Craft Deserves a Global Conversion Engine</h2>
+  
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A Humming Way's price point positions you in true luxury territory — comparable to international designers, but with craftsmanship and provenance that most can't match. Here's where you sit globally:</p>
+  
+  <table>
+    <tr><th>Brand</th><th>Statement Jacket</th><th>Embroidered Set</th><th>Gown/Kaftan</th></tr>
+    <tr><td>Zimmermann</td><td>$800–$1,500</td><td>$1,200–$2,500</td><td>$1,500–$3,000</td></tr>
+    <tr><td>Ulla Johnson</td><td>$600–$1,200</td><td>$800–$1,800</td><td>$900–$2,000</td></tr>
+    <tr><td>Dries Van Noten</td><td>$1,500–$3,000</td><td>$2,000–$4,000</td><td>$2,500–$5,000</td></tr>
+    <tr style="background:linear-gradient(90deg, rgba(200,206,235,0.1), rgba(163,223,245,0.1));"><td style="font-weight:700;color:#fff;">A Humming Way</td><td style="font-weight:700;color:#fff;">$350–$950</td><td style="font-weight:700;color:#fff;">$300–$650</td><td style="font-weight:700;color:#fff;">$260–$760</td></tr>
+  </table>
+  
+  <p style="margin-top:16px;">At AHW's price point — with hand-woven Khaadi, NYFW validation, and artisan provenance — you're offering <span class="bold">international luxury quality at a fraction of the price.</span> The craftsmanship is comparable or superior. The story is richer. GTF communicates all of this to the right customer at the right moment.</p>
+  
+  <p>GTF handles the complexity of international selling so you don't have to:</p>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🌍 DDP Shipping</h4><p>Duties and taxes pre-calculated. One price for the customer — no surprise customs charges. DHL international delivery.</p></div>
+    <div class="tool-card"><h4>💱 Multi-Currency</h4><p>Prices displayed in customer's local currency (USD, GBP, AED, EUR). Powered by Zonos.</p></div>
+    <div class="tool-card"><h4>🛒 Unified Checkout</h4><p>Customer buys AHW + another brand in one cart, one payment. You only ship your items.</p></div>
+    <div class="tool-card"><h4>📦 You Ship from Mumbai</h4><p>No inventory transfer. Products stay at your Juhu atelier. When an order comes in, you dispatch directly.</p></div>
+  </div>
+</div>
+
+<!-- PAGE 7: TOOLKIT -->
+<div class="page">
+  <h3>What You Get</h3>
+  <h2>The Complete GTF Toolkit for A Humming Way</h2>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🔍 AI Discovery Engine</h4><p>14-attribute product indexing. Natural language + image search. Vibe, occasion, material, craft technique, and provenance matching.</p></div>
+    <div class="tool-card"><h4>🧪 Virtual Try-On</h4><p>On every product page. Customers see themselves in your pieces. Especially powerful for AHW's experimental silhouettes.</p></div>
+    <div class="tool-card"><h4>✨ Outfit Builder</h4><p>Cross-brand outfit creation with your pieces. Increases average order value and discovery.</p></div>
+    <div class="tool-card"><h4>🎬 Shoppable UGC</h4><p>Real customer videos. Texture, drape, movement — what photos alone can't communicate about Khaadi.</p></div>
+    <div class="tool-card"><h4>👗 Shop the Look</h4><p>Editorial-to-commerce. Full outfit styling. One-click add-to-bag across brands.</p></div>
+    <div class="tool-card"><h4>📊 Brand Dashboard</h4><p>Real-time analytics: views, clicks, conversions, top queries, vibe performance, customer demand insights.</p></div>
+    <div class="tool-card"><h4>🌍 Global Logistics</h4><p>DHL + Zonos. Customs pre-calculated. DDP shipping — one price, no surprises for international customers.</p></div>
+    <div class="tool-card"><h4>🏷 Brand Page</h4><p>Your story — Sweta's vision, the artisans in Ahmedabad and Rajasthan, NYFW journey — premium brand experience with UGC gallery.</p></div>
+  </div>
+  
+  <p style="margin-top:16px;">Plus: <span class="bold">Brand Intelligence Reports</span> — monthly insights showing what customers search for, which products they save, and what vibes drive discovery. Data no other platform provides to emerging designers.</p>
+</div>
+
+<!-- PAGE 8: HOW IT WORKS + CTA -->
+<div class="page">
+  <h3>How It Works</h3>
+  <h2>Zero Risk. Performance Only.</h2>
+  
+  <table>
+    <tr><th>#</th><th>Step</th><th>Detail</th></tr>
+    <tr><td style="font-weight:700;color:#fff;">1</td><td>We onboard your catalogue</td><td>Product data, images, attributes — we handle the heavy lifting. Your products are indexed by our AI across 14+ attributes including material, craft technique, vibe, and provenance.</td></tr>
+    <tr><td style="font-weight:700;color:#fff;">2</td><td>Customers discover you</td><td>Through AI search, vibe browsing, outfit creation, and editorial features. No paid ads needed — organic discovery powered by intent matching.</td></tr>
+    <tr><td style="font-weight:700;color:#fff;">3</td><td>They buy, you ship</td><td>Single checkout across brands. GTF handles payment, customs calculation, and customer communication. You dispatch from your Juhu atelier.</td></tr>
+    <tr><td style="font-weight:700;color:#fff;">4</td><td>You get paid</td><td>Commission-based only. You pay nothing if we don't sell. No listing fees, no monthly charges, no upfront costs.</td></tr>
+  </table>
+  
+  <p style="margin-top:24px;text-align:center;color:#fff;font-size:16px;">
+    <strong>Commission-only model. No upfront costs. No inventory risk.<br>Your garments stay at your atelier — we bring the global customers.</strong>
+  </p>
+
+  <div class="cta-box" style="margin-top:40px;">
+    <h2>Let's Bring AHW to the World</h2>
+    <p style="color:var(--text-muted);">30 minutes — we'll show you the full platform live, walk through how A Humming Way fits into GTF's global marketplace, and discuss partnership terms.</p>
+    <a href="https://calendly.com/atiqa-getthefit/30min" class="cta-btn">BOOK A 30-MIN CALL →</a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; gap:40px; margin:32px 0; flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Live Platform</p>
+      <a href="https://dev.getthefit.ai" class="cta-link" style="font-size:14px;">dev.getthefit.ai</a>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Instagram</p>
+      <a href="https://www.instagram.com/getthefit.ai" class="cta-link" style="font-size:14px;">@getthefit.ai</a>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Partner With Us</p>
+      <a href="https://dev.getthefit.ai/discover/partner-with-us" class="cta-link" style="font-size:14px;">Partnership Page</a>
+    </div>
+  </div>
+  
+  <div class="gradient-line" style="margin-top:32px;"></div>
+  
+  <p style="font-size:12px;color:var(--text-dim);text-align:center;margin-top:16px;">
+    Atiqa Rahman, Founder & CEO<br>
+    Get The Fit · Venture-backed by Antler · UAE & NYC<br>
+    <a href="https://dev.getthefit.ai" class="cta-link">dev.getthefit.ai</a>
+  </p>
+</div>
+
+</body>
+</html>

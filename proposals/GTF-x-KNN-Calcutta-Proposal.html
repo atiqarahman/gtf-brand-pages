@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit × KNN Calcutta — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 60px 48px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: #fff; margin-bottom: 16px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #fff; margin-bottom: 12px; }
+  h3 { font-size: 16px; font-weight: 600; color: #7C6AEF; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  p { font-size: 14px; line-height: 1.75; color: #bbb; margin-bottom: 16px; }
+  .accent { color: #7C6AEF; }
+  .bold { font-weight: 700; color: #fff; }
+
+  .cover { display: flex; flex-direction: column; justify-content: center; min-height: 100vh; text-align: center; }
+  .cover .brand-x { font-size: 14px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #7C6AEF; margin-bottom: 24px; }
+  .cover h1 { font-size: 52px; margin-bottom: 20px; }
+  .cover .tagline { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: #888; margin-bottom: 40px; }
+  .cover .hook { font-size: 15px; color: #999; max-width: 500px; margin: 0 auto 40px; }
+  .cover .footer { font-size: 11px; color: #555; letter-spacing: 1px; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+  .stat-box { background: #151515; border-radius: 12px; padding: 20px; text-align: center; }
+  .stat-box .num { font-size: 28px; font-weight: 700; color: #7C6AEF; }
+  .stat-box .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .query-card { background: #151515; border-left: 4px solid #7C6AEF; padding: 16px 20px; border-radius: 0 10px 10px 0; margin-bottom: 12px; }
+  .query-card .query { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .query-card .result { font-size: 12px; color: #888; }
+
+  .screenshot { width: 100%; border-radius: 12px; margin: 16px 0; box-shadow: 0 4px 20px rgba(124, 106, 239, 0.1); }
+  .caption { font-size: 11px; color: #666; text-align: center; margin-bottom: 20px; font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { background: #7C6AEF; color: #fff; font-weight: 600; text-align: left; padding: 12px 16px; }
+  td { padding: 12px 16px; border-bottom: 1px solid #222; color: #ccc; }
+  tr:nth-child(even) td { background: #111; }
+
+  .toolkit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .tool-card { background: #151515; border-left: 4px solid #7C6AEF; border-radius: 0 10px 10px 0; padding: 16px 20px; }
+  .tool-card h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .tool-card p { font-size: 12px; color: #888; margin: 0; }
+
+  .cta-box { text-align: center; padding: 40px; background: linear-gradient(135deg, #0a0a0a, #1a1040); border-radius: 16px; margin: 24px 0; }
+  .cta-box a { display: inline-block; padding: 16px 48px; background: #7C6AEF; color: #fff; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 14px; margin: 12px 0; }
+  .cta-link { color: #7C6AEF; text-decoration: none; font-weight: 600; }
+
+  .links-row { display: flex; justify-content: center; gap: 32px; margin: 20px 0; flex-wrap: wrap; }
+  .links-row a { color: #7C6AEF; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+
+  @media print {
+    body { background: #0a0a0a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="brand-x">GET THE FIT × KNN CALCUTTA</div>
+  <h1>Partnership Proposal</h1>
+  <div class="tagline">Heritage Streetwear. Artisan Craft. Global Stage.</div>
+  <div class="hook">the platform where Calcutta's boldest streetwear meets AI-powered global discovery</div>
+  <div class="footer">PREPARED EXCLUSIVELY FOR KNN CALCUTTA<br>By Atiqa Rahman, CEO — Get The Fit · November 2026</div>
+</div>
+
+<!-- PAGE 2: THE DISCOVERY GAP -->
+<div class="page">
+  <h3>The Problem</h3>
+  <h2>The Discovery Gap Your Customers Face</h2>
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A 24-year-old in London scrolls past a KNN graphic tee on Instagram. He loves the aesthetic — streetwear that doesn't look like every other brand, with actual craft behind it. He wants to buy it. He searches online. He finds Nike, Stüssy, Off-White. He can't find you. That sale — and the artisan-made quality he actually wanted — is lost to a brand with a bigger ad budget.</p>
+  <p>KNN Calcutta is something rare: an upscale Indian streetwear label rooted in three generations of textile expertise. Founded by siblings Srishti and Yuvraj Gourisaria, KNN carries the DNA of Kanchana Sarees — your family's legacy since 1967 — into a world of graphic jerseys, hand-dyed hoodies, and experimental silhouettes. From the AfterParty collection to your latest drops, every piece is artisan-made in India with craftsmanship that mass streetwear simply can't replicate.</p>
+  <p style="color:#fff;font-weight:600;">Instagram builds your community. It doesn't convert globally at scale. And traditional marketplaces can't communicate why a KNN hoodie is different from a Zara one — they strip away the story, the craft, the culture.</p>
+  
+  <h3 style="margin-top:32px;">This Is How They Search on GTF</h3>
+  <img src="../platform-screenshots/hero-chatbot.jpg" class="screenshot" alt="GTF AI Search">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Our AI chatbot — customers describe what they feel, not keywords. "Curated emerging designers from around the world."</div>
+  
+  <h3 style="margin-top:24px;">What Your Customer Actually Searches For</h3>
+  <div class="query-card"><div class="query">"Streetwear that's actually well-made, not fast fashion"</div><div class="result">→ GTF AI: vibe = Streetwear + Edgy, quality = artisan/handmade, category = graphic tees + hoodies → surfaces KNN Calcutta</div></div>
+  <div class="query-card"><div class="query">"Indian streetwear brand — something unique for a night out"</div><div class="result">→ GTF AI: origin = India, vibe = Streetwear, occasion = night out → surfaces KNN graphic jerseys, corsets, statement pieces</div></div>
+  <div class="query-card"><div class="query">"Cool graphic hoodie with actual design — not just a logo"</div><div class="result">→ GTF AI: category = hoodie, pattern = graphic/artistic, quality = premium → surfaces KNN hand-dyed hoodies and printed sweatshirts</div></div>
+  <div class="query-card"><div class="query">"Something between luxury and streetwear"</div><div class="result">→ GTF AI: vibe = Elevated Streetwear, price tier = accessible luxury → surfaces KNN blazers, jerseys, and structured pieces</div></div>
+  <div class="query-card"><div class="query">"Statement jacket for a music festival"</div><div class="result">→ GTF AI: category = jacket, occasion = festival, vibe = Bold + Edgy → surfaces KNN printed jackets and graphic outerwear</div></div>
+
+  <p style="margin-top:16px;">No traditional marketplace can process these queries. They rely on category filters. GTF's AI understands intent, vibe, occasion, and aesthetic — and matches them to your product attributes.</p>
+</div>
+
+<!-- PAGE 3: THE PLATFORM -->
+<div class="page">
+  <h3>The Platform</h3>
+  <h2>The GTF Platform — Built for Discovery</h2>
+  
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">$60K+</div><div class="label">GMV in 3 months</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Curated brands</div></div>
+    <div class="stat-box"><div class="num">🚀</div><div class="label">Venture-backed (Antler)</div></div>
+    <div class="stat-box"><div class="num">UAE</div><div class="label">HQ · Global reach</div></div>
+  </div>
+  
+  <p>Get The Fit is an AI-powered fashion discovery marketplace — venture-backed by Antler, headquartered in Dubai, serving customers globally. We bring the entire shopping journey into one place: from natural-language discovery to virtual try-on to multi-brand checkout.</p>
+  
+  <p>We curate emerging designers from India, UAE, Turkey, Brazil, and beyond — brands with extraordinary craftsmanship that deserve a global audience. KNN Calcutta's fusion of heritage artisanship and streetwear edge is exactly what our customers are searching for — and exactly what global streetwear is missing.</p>
+
+  <p><span class="bold">See it live:</span> <a href="https://dev.getthefit.ai" class="cta-link">dev.getthefit.ai →</a></p>
+
+  <h3 style="margin-top:24px;">Discover by Vibe</h3>
+  <img src="../platform-screenshots/our-designers.jpg" class="screenshot" alt="Our Designers">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Every brand has a dedicated page — their story, aesthetic, vibes, and full collection. Filterable by vibe and region.</div>
+  
+  <img src="../platform-screenshots/brand-vibes-dropdown.jpg" class="screenshot" alt="Vibe Navigation">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">KNN Calcutta would surface under Streetwear, Edgy, Bold, and Cultural Fusion vibes — reaching customers who search by feeling, not category.</div>
+</div>
+
+<!-- PAGE 4: FEATURES -->
+<div class="page">
+  <h3>Features</h3>
+  <h2>Outfit Creator + Cross-Brand Styling</h2>
+  <p>Customers build complete outfits mixing pieces from different designers. Your KNN graphic tee gets paired with another brand's cargo pants — and both go into one cart. Your products get discovered by customers who came for another brand and leave with yours too.</p>
+  
+  <img src="../platform-screenshots/outfit-creator.jpg" class="screenshot" alt="Outfit Creator">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Outfit Creator — customers mix and match across brands. "Try On Me" brings it together.</div>
+  
+  <h3 style="margin-top:32px;">Community Spotlight — Shoppable UGC</h3>
+  <p>Real looks from real customers. Every video and photo is shoppable — social proof that converts browsers into buyers. For KNN, this is especially powerful: streetwear lives and dies on how it's styled in the real world. UGC shows how your pieces move, layer, and live beyond the lookbook.</p>
+  
+  <img src="../platform-screenshots/spotlight-ugc.jpg" class="screenshot" alt="Spotlight">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">Spotlight — shoppable UGC with engagement metrics. Real customers, real outfits, real purchases.</div>
+
+  <h3 style="margin-top:32px;">AI-Powered Search Results</h3>
+  <p>When a customer describes what they want, GTF doesn't just search by keyword — it understands vibe, occasion, and aesthetic. KNN's eclectic designs get surfaced for the right queries, to the right customers, at the right moment.</p>
+  
+  <img src="../platform-screenshots/search-results.jpg" class="screenshot" alt="Search Results">
+  <div class="caption" style="color:#fff;font-weight:600;font-size:14px;">AI search results — ranked by relevance, vibe match, and occasion. Your products appear when they matter most.</div>
+</div>
+
+<!-- PAGE 5: THE FIT -->
+<div class="page">
+  <h3>The Fit</h3>
+  <h2>Why KNN Calcutta Is a Perfect Partner</h2>
+  
+  <table>
+    <tr><th>KNN Calcutta DNA</th><th>GTF Positioning</th><th>Why It Converts</th></tr>
+    <tr><td>Upscale streetwear with artisan roots</td><td>AI indexes vibe + craft as ranking signals</td><td>"Quality streetwear" and "handmade" queries → KNN Calcutta</td></tr>
+    <tr><td>Heritage since 1967 (Kanchana Sarees)</td><td>Heritage story as a trust signal + differentiator</td><td>Three generations of textile expertise = authenticity no hypebeast brand can claim</td></tr>
+    <tr><td>₹1,299–₹24,999 price range</td><td>Accessible luxury positioning</td><td>Competitive globally — better quality than Western streetwear at comparable or lower prices</td></tr>
+    <tr><td>Graphic tees, jerseys, hoodies, blazers, corsets</td><td>Cross-category discovery across streetwear + occasion</td><td>A customer searching for a night-out top discovers KNN corsets; searching for a hoodie discovers KNN knitwear</td></tr>
+    <tr><td>Eclectic, Kolkata-rooted design philosophy</td><td>Cultural origin as discovery attribute</td><td>"Indian streetwear" and "Kolkata fashion" queries → KNN as the definitive answer</td></tr>
+    <tr><td>P.V. Sindhu + press coverage</td><td>Social proof in brand story page</td><td>Celebrity validation increases conversion confidence for new international customers</td></tr>
+  </table>
+  
+  <p style="margin-top:24px;color:#fff;font-size:15px;">KNN Calcutta represents a new category: heritage streetwear from India, made by artisans who've been working with the Gourisaria family for generations. GTF was built to take brands like this global — your price point is already competitive internationally, your aesthetic is already global-ready. You just need the right platform to reach that audience.</p>
+</div>
+
+<!-- PAGE 6: GLOBAL OPPORTUNITY -->
+<div class="page">
+  <h3>The Opportunity</h3>
+  <h2>Your Price Point Is a Global Weapon</h2>
+  
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">Let's be direct: KNN Calcutta's pricing is one of your biggest advantages for international expansion. Here's what the global streetwear customer currently pays:</p>
+  
+  <table>
+    <tr><th>Brand</th><th>Graphic Tee</th><th>Hoodie</th><th>Jacket</th></tr>
+    <tr><td>Off-White</td><td>$300–$500</td><td>$600–$900</td><td>$1,200+</td></tr>
+    <tr><td>Stüssy</td><td>$50–$80</td><td>$130–$180</td><td>$200–$350</td></tr>
+    <tr><td>Palm Angels</td><td>$200–$350</td><td>$400–$600</td><td>$800+</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:700;">KNN Calcutta</td><td style="color:#7C6AEF;font-weight:700;">$35–$60</td><td style="color:#7C6AEF;font-weight:700;">$60–$100</td><td style="color:#7C6AEF;font-weight:700;">$95–$180</td></tr>
+  </table>
+  
+  <p style="margin-top:16px;">At KNN's price point — with artisan-made quality, genuine heritage, and experimental design — you're not competing with Stüssy or Off-White. You're offering something they can't: <span class="bold">authentic Indian streetwear craftsmanship at accessible prices.</span> That's a category of one.</p>
+  
+  <p>GTF handles the complexity of international selling so you don't have to:</p>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🌍 DDP Shipping</h4><p>Duties and taxes pre-calculated. One price for the customer — no surprise customs charges. DHL international delivery.</p></div>
+    <div class="tool-card"><h4>💱 Multi-Currency</h4><p>Prices displayed in customer's local currency (USD, GBP, AED, EUR). Powered by Zonos.</p></div>
+    <div class="tool-card"><h4>🛒 Unified Checkout</h4><p>Customer buys KNN + another brand in one cart, one payment. You only ship your items.</p></div>
+    <div class="tool-card"><h4>📦 You Ship from India</h4><p>No inventory transfer. Products stay with you. When an order comes in, you dispatch from your facility.</p></div>
+  </div>
+</div>
+
+<!-- PAGE 7: TOOLKIT -->
+<div class="page">
+  <h3>What You Get</h3>
+  <h2>The Complete GTF Toolkit for KNN Calcutta</h2>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🔍 AI Discovery Engine</h4><p>14-attribute product indexing. Natural language + image search. Vibe, occasion, aesthetic, and cultural origin matching.</p></div>
+    <div class="tool-card"><h4>🧪 Virtual Try-On</h4><p>On every product page. Customers see themselves in your pieces. Converts browsers into buyers.</p></div>
+    <div class="tool-card"><h4>✨ Outfit Builder</h4><p>Cross-brand outfit creation with your pieces. Increases average order value and cross-brand discovery.</p></div>
+    <div class="tool-card"><h4>🎬 Shoppable UGC</h4><p>Real customer videos. Social proof that shows how your streetwear looks in the real world.</p></div>
+    <div class="tool-card"><h4>📊 Brand Dashboard</h4><p>Real-time analytics: views, clicks, conversions, top queries, vibe performance, customer demand insights.</p></div>
+    <div class="tool-card"><h4>🌍 Global Logistics</h4><p>DHL + Zonos. Customs pre-calculated. DDP shipping — one price, no surprises for international customers.</p></div>
+    <div class="tool-card"><h4>🏷 Brand Page</h4><p>Your story — Kanchana heritage, Kolkata roots, artisan community — premium brand experience with UGC gallery.</p></div>
+    <div class="tool-card"><h4>📈 Brand Intelligence</h4><p>Monthly reports: what customers search for, which products they save, what vibes drive discovery. Data no other platform provides.</p></div>
+  </div>
+  
+  <p style="margin-top:16px;">Plus: <span class="bold">Cross-brand styling exposure</span> — your KNN pieces get featured alongside complementary brands in outfit pairings, editorially curated looks, and AI-suggested combinations. Every outfit pairing = new customer discovery.</p>
+</div>
+
+<!-- PAGE 8: HOW IT WORKS + CTA -->
+<div class="page">
+  <h3>How It Works</h3>
+  <h2>Zero Risk. Performance Only.</h2>
+  
+  <table>
+    <tr><th>#</th><th>Step</th><th>Detail</th></tr>
+    <tr><td style="color:#7C6AEF;font-weight:700;">1</td><td>We onboard your catalogue</td><td>Product data, images, attributes — we handle the heavy lifting. Your products are indexed by our AI across 14+ attributes including vibe, aesthetic, and cultural origin.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:700;">2</td><td>Customers discover you</td><td>Through AI search, vibe browsing, outfit creation, and editorial features. No paid ads needed — organic discovery powered by intent matching.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:700;">3</td><td>They buy, you ship</td><td>Single checkout across brands. GTF handles payment, customs calculation, and customer communication. You dispatch from India.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:700;">4</td><td>You get paid</td><td>Commission-based only. You pay nothing if we don't sell. No listing fees, no monthly charges, no upfront costs.</td></tr>
+  </table>
+  
+  <p style="margin-top:24px;text-align:center;color:#fff;font-size:16px;">
+    <strong>Commission-only model. No upfront costs. No inventory risk.<br>Your products stay with you — we bring the global customers.</strong>
+  </p>
+
+  <div class="cta-box" style="margin-top:40px;">
+    <h2>Let's Build This Together</h2>
+    <p style="color:#888;">30 minutes — we'll show you the full platform live, walk through how KNN Calcutta fits into GTF's global marketplace, and discuss partnership terms.</p>
+    <a href="https://calendly.com/atiqa-getthefit/30min">BOOK A 30-MIN CALL →</a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; gap:40px; margin:32px 0; flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Live Platform</p>
+      <a href="https://dev.getthefit.ai" style="color:#7C6AEF;font-weight:600;font-size:14px;text-decoration:none;">dev.getthefit.ai</a>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Instagram</p>
+      <a href="https://www.instagram.com/getthefit.ai" style="color:#7C6AEF;font-weight:600;font-size:14px;text-decoration:none;">@getthefit.ai</a>
+    </div>
+    <div style="text-align:center;">
+      <p style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Partner With Us</p>
+      <a href="https://dev.getthefit.ai/discover/partner-with-us" style="color:#7C6AEF;font-weight:600;font-size:14px;text-decoration:none;">Partnership Page</a>
+    </div>
+  </div>
+  
+  <p style="font-size:12px;color:#666;text-align:center;margin-top:24px;">
+    Atiqa Rahman, Founder & CEO<br>
+    Get The Fit · Venture-backed by Antler · UAE & India<br>
+    <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a>
+  </p>
+</div>
+
+</body>
+</html>

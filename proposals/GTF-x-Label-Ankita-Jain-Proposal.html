@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit × Label Ankita Jain — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 60px 48px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #7C6AEF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #bbb;
+    margin-bottom: 16px;
+  }
+
+  .accent { color: #7C6AEF; }
+  .bold { font-weight: 700; color: #fff; }
+  
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .cover .brand-x {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7C6AEF;
+    margin-bottom: 24px;
+  }
+
+  .cover h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+  }
+
+  .cover .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 40px;
+  }
+
+  .cover .hook {
+    font-size: 15px;
+    color: #999;
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+
+  .cover .footer {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .stat-box {
+    background: #151515;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-box .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .stat-box .label {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .query-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 12px;
+  }
+
+  .query-card .query {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .query-card .result {
+    font-size: 12px;
+    color: #888;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  th {
+    background: #7C6AEF;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+  }
+
+  tr:nth-child(even) td { background: #111; }
+
+  .toolkit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .tool-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+  }
+
+  .tool-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .tool-card p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+
+  .commission-box {
+    background: linear-gradient(135deg, #1a1040, #2a1a60);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .commission-box .rate {
+    font-size: 64px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .commission-box .sub {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .cta-box {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #0a0a0a, #1a1040);
+    border-radius: 16px;
+    margin: 24px 0;
+  }
+
+  .cta-box a {
+    display: inline-block;
+    padding: 16px 48px;
+    background: #7C6AEF;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  .price-note {
+    background: #151515;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .price-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .market-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .market-card {
+    background: #151515;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .market-card .flag {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .market-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .market-card p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+
+  @media print {
+    body { background: #0a0a0a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="brand-x">GET THE FIT × LABEL ANKITA JAIN</div>
+  <h1>Partnership Proposal</h1>
+  <div class="tagline">Bold Statement Wear. Global Audience. Zero Friction.</div>
+  <div class="hook">The platform where satin drapes, embroidered corsets, and power dressing meet AI-powered discovery — and reach women in Dubai, London, and New York who are searching for exactly what you make.</div>
+  <div class="footer">PREPARED EXCLUSIVELY FOR LABEL ANKITA JAIN<br>By Atiqa Rahman, CEO — Get The Fit · November 2026</div>
+</div>
+
+<!-- PAGE 2: THE DISCOVERY GAP -->
+<div class="page">
+  <h3>The Problem</h3>
+  <h2>Your Customer Exists. She Just Can't Find You.</h2>
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A woman in Dubai is getting ready for a cocktail evening. She knows the feeling she wants — something bold, body-conscious, with a sense of edge, but elevated. Not fast fashion. Not cookie-cutter. She opens Pinterest, saves a few mood board images. She goes to Revolve — 14,000 dresses, none with the satin draping and hand-embroidered detail she saw on her feed. She tries Farfetch — luxury pricing, but the discovery is still "filter by colour, filter by length." She gives up and buys something safe from a brand she already knows. Your Bordeaux Knot Dress, your Gilda Midi, your embroidered corset tops — they're exactly what she wanted. She just never saw them.</p>
+  
+  <p>Label Ankita Jain is a Delhi-born statement wear brand — bootstrapped from ₹45,000 at Pearl Academy into a 266-product, globally shipping label with 69K+ Instagram followers and a physical store in Delhi. The collections span satin drapes, structured corsets, hand-embroidered occasion wear, resort pieces, modern Indian silhouettes, and power dressing — all made to order, size-inclusive (XXXS–XXXL), and customisable. The craftsmanship is there. The product is there. The audience is there. What's missing is the bridge.</p>
+  
+  <p style="color:#fff;font-weight:600;">Instagram builds awareness. It doesn't convert internationally at scale. And traditional marketplaces bury your brand in a sea of thousands — stripping away the aesthetic, the story, and the vibe that makes someone choose Label Ankita Jain over a generic "black satin dress."</p>
+
+  <h3 style="margin-top:32px;">This Is How They Search on GTF</h3>
+
+  <div class="query-card">
+    <div class="query">"Satin drape dress for a cocktail party — sexy but not too much"</div>
+    <div class="result">→ GTF AI: material = satin, silhouette = draped, occasion = cocktail, vibe = Sexy Elegant → surfaces Gilda Midi, Bordeaux Knot Dress</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Embroidered corset top I can dress up or down"</div>
+    <div class="result">→ GTF AI: category = corset/top, detail = embroidered, occasion = versatile, vibe = Edgy + Glam → surfaces Margaux Cami, embroidered bodysuits</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Statement dress for a Dubai night out — not Zara, not $$$$"</div>
+    <div class="result">→ GTF AI: occasion = nightlife, destination = Dubai, price tier = accessible luxury, vibe = Glam + Bold → surfaces Onyx Gown, Crimson Mini, Cobalt Midi</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Indian designer resort wear — sexy, modern, not traditional"</div>
+    <div class="result">→ GTF AI: origin = India, occasion = resort/travel, vibe = Sexy + Modern, keyword = non-traditional → surfaces the entire resort & swim collection</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Power dressing outfit for a fashion week event — structured, bold"</div>
+    <div class="result">→ GTF AI: occasion = fashion event, vibe = Power + Editorial, silhouette = structured → surfaces the Power Dressing collection and outfit sets</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Bodycon dress with cut-outs for a bachelorette — something unique"</div>
+    <div class="result">→ GTF AI: silhouette = bodycon, detail = cut-out, occasion = bachelorette, vibe = Sexy + Unique Finds → surfaces Onyx Bodysuit Dress, SCNDSKN Dresses</div>
+  </div>
+
+  <p style="margin-top:16px;">No traditional marketplace processes these queries. They rely on category filters. GTF's AI understands intent, vibe, occasion, body language, and design detail — and matches them to your products.</p>
+</div>
+
+<!-- PAGE 3: TARGET MARKETS -->
+<div class="page">
+  <h3>The Opportunity</h3>
+  <h2>Three Markets. One Platform.</h2>
+
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">Label Ankita Jain already ships worldwide and prices in multiple currencies. The product is global-ready. What's needed is a discovery layer that puts your pieces in front of the right women in the right markets — women who are actively searching for what you make but can't find you through Instagram algorithms or traditional e-commerce filters.</p>
+
+  <div class="market-grid">
+    <div class="market-card">
+      <div class="flag">🇦🇪</div>
+      <h4>UAE</h4>
+      <p>Dubai, Abu Dhabi — a city of cocktail evenings, brunches, resort weekends, and fashion-forward women who want statement pieces that aren't the same 5 brands everyone else is wearing. Strong South Asian diaspora who already appreciate Indian design but want modern, non-traditional silhouettes. <span style="color:#7C6AEF;">Your sweet spot.</span></p>
+    </div>
+    <div class="market-card">
+      <div class="flag">🇬🇧</div>
+      <h4>United Kingdom</h4>
+      <p>London's occasion wear market — cocktail parties, gallery openings, races, weddings. A massive South Asian community that actively shops Indian designers for sangeets and receptions but wants modern cuts. Plus: a growing appetite for emerging global brands over high-street sameness.</p>
+    </div>
+    <div class="market-card">
+      <div class="flag">🇺🇸</div>
+      <h4>United States</h4>
+      <p>NYC, LA, Miami — women who discover fashion on Instagram, have mood boards full of "that vibe" but can't translate it into purchases. The $130–$350 price range is perfect: above fast fashion, below traditional luxury. Statement resort wear and party dresses with actual craftsmanship.</p>
+    </div>
+  </div>
+
+  <p>GTF already serves customers across all three markets with DDP shipping (duties pre-calculated, no surprises at customs) via DHL. Your customer in Dubai sees prices in AED. Your customer in London sees GBP. Your customer in NYC sees USD. One price. One checkout. Done.</p>
+</div>
+
+<!-- PAGE 4: THE PLATFORM -->
+<div class="page">
+  <h3>The Platform</h3>
+  <h2>Built for Discovery, Not Just Listings</h2>
+  
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">$60K+</div><div class="label">GMV in 3 months</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Curated brands</div></div>
+    <div class="stat-box"><div class="num">🚀</div><div class="label">Venture-backed (Antler)</div></div>
+    <div class="stat-box"><div class="num">UAE & NYC</div><div class="label">HQ · Global Reach</div></div>
+  </div>
+  
+  <p>Get The Fit is an AI-powered fashion discovery marketplace — venture-backed by Antler, headquartered in UAE & NYC. We don't just list products. We understand what customers mean when they search, and we match that intent to the right brand.</p>
+
+  <h3 style="margin-top:24px;">AI Chat Discovery</h3>
+  <p>Customers describe what they want in natural language — "something for a rooftop dinner in Mykonos, sexy but not trying too hard" — and our AI returns curated results from across all brands. Your Gilda Maxi and resort swim pieces surface for queries no other platform could interpret. The chatbot learns preferences over time, getting smarter with every interaction.</p>
+
+  <h3 style="margin-top:24px;">Outfit Creator</h3>
+  <p>Customers build complete outfits mixing pieces across brands. Your embroidered corset top gets paired with another brand's tailored trousers — both go into one cart. Cross-brand discovery means your products reach customers who came for someone else and leave with yours too.</p>
+
+  <h3 style="margin-top:24px;">Shop the Look</h3>
+  <p>Editorial-to-commerce. Complete styled outfits — toggle items on/off, add the whole look to bag in one click. Your Label Ankita Jain outfit sets get styled as hero pieces alongside complementary brands.</p>
+
+  <h3 style="margin-top:24px;">Brand Dashboard</h3>
+  <p>Real-time analytics you can't get anywhere else: which queries lead to your products, which vibes your brand indexes for, what customers search before and after viewing your pieces, conversion rates by market, and demand signals for products you haven't made yet.</p>
+
+  <p><span class="bold">See it live:</span> <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a></p>
+</div>
+
+<!-- PAGE 5: WHY LABEL ANKITA JAIN -->
+<div class="page">
+  <h3>The Fit</h3>
+  <h2>Why Label Ankita Jain Is a Perfect Partner</h2>
+  
+  <table>
+    <tr><th>Label Ankita Jain DNA</th><th>GTF Positioning</th><th>Why It Converts</th></tr>
+    <tr>
+      <td>Satin drapes, structured corsets, hand-embroidered detail</td>
+      <td>AI indexes material, detail, and silhouette as ranking signals</td>
+      <td>"Satin drape dress" and "embroidered corset" queries → Label Ankita Jain surfaces first</td>
+    </tr>
+    <tr>
+      <td>266 products across 7+ categories — dresses, tops, resort, swim, modern Indian, power dressing</td>
+      <td>Multi-category discovery across vibes and occasions</td>
+      <td>A customer searching "resort bodysuit" discovers the brand; searching "cocktail dress" discovers it again from a different angle</td>
+    </tr>
+    <tr>
+      <td>₹10K–₹29K price range ($130–$350 USD)</td>
+      <td>The "accessible luxury" sweet spot — above fast fashion, below traditional luxury</td>
+      <td>GTF's $300 average order perfectly aligns with Label Ankita Jain's pricing. No discounting needed.</td>
+    </tr>
+    <tr>
+      <td>Made to order, XXXS–XXXL, customisable</td>
+      <td>Size inclusivity + personalisation as trust signals</td>
+      <td>Virtual try-on + "customise this piece" = conversion engine for customers who hesitate on new brands</td>
+    </tr>
+    <tr>
+      <td>Bold values — Pride merch, inclusive casting, diverse models</td>
+      <td>Brand values as discovery and trust attributes</td>
+      <td>Customers who search by values ("inclusive sizing", "LGBTQ-friendly brands") discover Label Ankita Jain organically</td>
+    </tr>
+    <tr>
+      <td>Bootstrapped ₹45K → 69K following, global shipping, Delhi store</td>
+      <td>Founder story as authenticity and credibility signal</td>
+      <td>Ankita's Pearl Academy origin story makes the brand relatable AND aspirational — the kind of story that converts browsers into loyal customers</td>
+    </tr>
+  </table>
+</div>
+
+<!-- PAGE 6: TOOLKIT + LOGISTICS -->
+<div class="page">
+  <h3>What You Get</h3>
+  <h2>The Complete GTF Toolkit</h2>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🔍 AI Discovery Engine</h4><p>14-attribute product indexing. Natural language + image search. Vibe, occasion, aesthetic, material, silhouette, and destination matching.</p></div>
+    <div class="tool-card"><h4>💬 AI Chatbot</h4><p>Conversational shopping assistant that understands "I want something like what I saw on Instagram but in blue." Learns customer preferences over time.</p></div>
+    <div class="tool-card"><h4>🧪 Virtual Try-On</h4><p>On every product page. Customers see themselves in your pieces — especially powerful for bodycon silhouettes and drape dresses where fit is everything.</p></div>
+    <div class="tool-card"><h4>✨ Outfit Creator</h4><p>Cross-brand outfit building with your pieces as hero items. Increases average order value and cross-brand discovery.</p></div>
+    <div class="tool-card"><h4>👗 Shop the Look</h4><p>Editorial-to-commerce. Full outfit styling with Label Ankita Jain as the anchor. One-click add-to-bag across brands.</p></div>
+    <div class="tool-card"><h4>🎬 Shoppable UGC</h4><p>Real customer videos and content — social proof that converts browsers into buyers. See how that Gilda Midi actually moves on a real body.</p></div>
+    <div class="tool-card"><h4>📊 Brand Dashboard</h4><p>Real-time analytics: views, clicks, conversions, top queries, vibe performance, market-by-market breakdown, and demand intelligence.</p></div>
+    <div class="tool-card"><h4>🏷 Brand Page</h4><p>Your story, aesthetic, and full collection — premium brand experience with UGC gallery and vibe-based filtering.</p></div>
+  </div>
+
+  <h3 style="margin-top:32px;">Global Logistics — We Handle Everything</h3>
+
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🌍 DDP Shipping</h4><p>Duties and taxes pre-calculated. One price for the customer — no surprise customs charges. DHL international delivery to UAE, UK, US, and beyond.</p></div>
+    <div class="tool-card"><h4>💱 Multi-Currency</h4><p>Prices displayed in AED, GBP, USD, EUR — whatever your customer's local currency. Powered by Zonos.</p></div>
+    <div class="tool-card"><h4>🛒 Unified Checkout</h4><p>Customer buys Label Ankita Jain + another brand in one cart, one payment. You only ship your items.</p></div>
+    <div class="tool-card"><h4>📦 You Ship from Delhi</h4><p>No inventory transfer. Products stay with you. When an order comes in, you dispatch from your facility. Made-to-order works perfectly with our fulfilment flow.</p></div>
+  </div>
+</div>
+
+<!-- PAGE 7: COMMISSION + CTA -->
+<div class="page">
+  <h3>Terms</h3>
+  <h2>Commission & Payout</h2>
+  
+  <div class="commission-box">
+    <div class="rate">40%</div>
+    <div class="sub">Performance-based. You pay zero if we don't sell.</div>
+  </div>
+  
+  <table>
+    <tr><th>Channel</th><th>Effective Cost</th><th>What You Get</th></tr>
+    <tr><td>Google Ads</td><td>25–40% of revenue</td><td>Clicks, maybe conversions. You pay even if nobody buys. No brand story. No discovery.</td></tr>
+    <tr><td>Instagram/Meta Ads</td><td>25–35% of revenue</td><td>Impressions, followers. Converting them to international sales is a separate problem.</td></tr>
+    <tr><td>Traditional Marketplace (21.12, etc.)</td><td>30–45% + listing fees</td><td>Buried in hundreds of brands. Category filters only. Your aesthetic gets lost.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:600;">GTF (40%)</td><td style="color:#7C6AEF;font-weight:600;">40% — only on sales</td><td style="color:#7C6AEF;">AI discovery + chatbot + virtual try-on + outfit creator + UGC + DDP logistics + analytics + brand dashboard. Zero upfront cost.</td></tr>
+  </table>
+
+  <div class="price-note" style="margin-top:24px;">
+    <p>You're already spending on Google Ads to acquire customers. GTF gives you a new international acquisition channel at the same cost — but with an AI discovery engine, virtual try-on, outfit styling, and global logistics built in. The 40% isn't a fee on your existing sales — it's the cost of new revenue from customers who would never have found you otherwise.</p>
+  </div>
+  
+  <div class="cta-box" style="margin-top:40px;">
+    <h2>Let's Take Label Ankita Jain Global</h2>
+    <p style="color:#888;">You built this brand from ₹45,000 and a dream at Pearl Academy. You've proven the product, the audience, and the craft. Now let's put it in front of the women in Dubai, London, and New York who are searching for exactly what you make — and give them a reason to buy.</p>
+    <a href="https://calendly.com/atiqa-getthefit/30min">BOOK A FOLLOW-UP CALL →</a>
+    <p style="font-size:12px;color:#999;margin-top:16px;">
+      🌐 <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a> · 
+      📸 <a href="https://www.instagram.com/getthefit.ai" style="color:#7C6AEF;">@getthefit.ai</a>
+    </p>
+    <p style="font-size:11px;color:#555;margin-top:12px;">Atiqa Rahman, Founder & CEO · Get The Fit · Antler-backed · Dubai & NYC</p>
+  </div>
+</div>
+
+</body>
+</html>

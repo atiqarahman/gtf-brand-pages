@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit × HSW — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 60px 48px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #7C6AEF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #bbb;
+    margin-bottom: 16px;
+  }
+
+  .accent { color: #7C6AEF; }
+  .bold { font-weight: 700; color: #fff; }
+  
+  /* Cover */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .cover .brand-x {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7C6AEF;
+    margin-bottom: 24px;
+  }
+
+  .cover h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+  }
+
+  .cover .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 40px;
+  }
+
+  .cover .hook {
+    font-size: 15px;
+    color: #999;
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+
+  .cover .footer {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+
+  /* Stats banner */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .stat-box {
+    background: #151515;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-box .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .stat-box .label {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* Query cards */
+  .query-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 12px;
+  }
+
+  .query-card .query {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .query-card .result {
+    font-size: 12px;
+    color: #888;
+  }
+
+  /* Screenshot */
+  .screenshot {
+    width: 100%;
+    border-radius: 12px;
+    margin: 16px 0;
+    box-shadow: 0 4px 20px rgba(124, 106, 239, 0.1);
+  }
+
+  .caption {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  /* DNA table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  th {
+    background: #7C6AEF;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+  }
+
+  tr:nth-child(even) td { background: #111; }
+
+  /* Toolkit cards */
+  .toolkit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .tool-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+  }
+
+  .tool-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .tool-card p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* Commission */
+  .commission-box {
+    background: linear-gradient(135deg, #1a1040, #2a1a60);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .commission-box .rate {
+    font-size: 64px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .commission-box .sub {
+    font-size: 14px;
+    color: #888;
+  }
+
+  /* CTA */
+  .cta-box {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #0a0a0a, #1a1040);
+    border-radius: 16px;
+    margin: 24px 0;
+  }
+
+  .cta-box a {
+    display: inline-block;
+    padding: 16px 48px;
+    background: #7C6AEF;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  /* Pricing comparison */
+  .price-note {
+    background: #151515;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .price-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  @media print {
+    body { background: #0a0a0a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="brand-x">GET THE FIT × HSW</div>
+  <h1>Partnership Proposal</h1>
+  <div class="tagline">Architectural Femininity. Kuwait Heritage. Global Stage.</div>
+  <div class="hook">The platform where precision-engineered womenswear meets AI-powered global fashion discovery.</div>
+  <div class="footer">PREPARED EXCLUSIVELY FOR HSW — HOW SHE WEARS IT<br>By Atiqa Rahman, CEO — Get The Fit · November 2026</div>
+</div>
+
+<!-- PAGE 2: THE DISCOVERY GAP -->
+<div class="page">
+  <h3>The Problem</h3>
+  <h2>The Discovery Gap Your Customers Face</h2>
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A woman in New York is getting dressed for a gallery opening. She wants a coat that commands the room — structured but not stiff, feminine but not obvious. She screenshots something on Instagram that has the right energy. She searches online. She finds Zara blazers and generic "structured coats." She can't find you. That sale — and the woman who would have kept that piece for years — is lost to a brand with a bigger ad budget.</p>
+  
+  <p>HSW is something genuinely rare: a Kuwait-founded womenswear house built by a prosthodontist who brought her training in millimetre precision, contour, and form-function relationships into fashion. Dr. Maram Alibrahim didn't just start a clothing brand — she engineered one. Every waistline is calculated. Every collar changes posture. Fringe is considered in motion. Texture is never added without purpose. The result is "architectural femininity" — limited-edition pieces that hold structure and sensuality in the same silhouette, designed to feel memorable without feeling temporary.</p>
+  
+  <p style="color:#fff;font-weight:600;">Instagram builds your audience. It doesn't convert globally at scale. And traditional marketplaces can't communicate why an HSW sculpted coat is different from a department store blazer — they strip away the engineering, the intention, the precision.</p>
+
+  <h3 style="margin-top:32px;">This Is How They Search on GTF</h3>
+
+  <div class="query-card">
+    <div class="query">"Hailey Bieber chic sophisticated vibe"</div>
+    <div class="result">→ GTF AI: style reference = Hailey Bieber, vibe = Chic + Sophisticated + Cool Girl → surfaces HSW sculpted blazers, tailored sets and minimal-luxe pieces</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Suits that snatch"</div>
+    <div class="result">→ GTF AI: category = suit/set, silhouette = body-conscious + tailored, vibe = Sexy Elegant + Power → surfaces HSW structured suit sets and tailored separates</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Jacquemus type of blazers"</div>
+    <div class="result">→ GTF AI: style reference = Jacquemus, category = blazer, silhouette = architectural + sculpted → surfaces HSW statement blazers and structured outerwear</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Sexy but elegant date night corset trousers"</div>
+    <div class="result">→ GTF AI: occasion = date night, vibe = Sexy Elegant, category = corset top + trousers, silhouette = body-sculpting → surfaces HSW evening co-ords and tailored sets</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Sculpted sexy sets"</div>
+    <div class="result">→ GTF AI: silhouette = sculpted, vibe = Sexy + Statement, category = co-ord set → surfaces HSW architectural sets and matching separates</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Victoria Beckham vibes but sexy, under $400"</div>
+    <div class="result">→ GTF AI: style reference = Victoria Beckham, vibe = Sexy Elegant + Minimal, price = under $400 → surfaces HSW as the accessible alternative with the same architectural precision</div>
+  </div>
+
+  <p style="margin-top:16px;">No traditional marketplace can process these queries. They rely on category filters. GTF's AI understands intent, vibe, occasion, and design philosophy — and matches them to your product attributes.</p>
+</div>
+
+<!-- PAGE 3: THE PLATFORM -->
+<div class="page">
+  <h3>The Platform</h3>
+  <h2>The GTF Platform — Built for Discovery</h2>
+  
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">$60K+</div><div class="label">GMV in 3 months</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Curated brands</div></div>
+    <div class="stat-box"><div class="num">🚀</div><div class="label">Venture-backed (Antler)</div></div>
+    <div class="stat-box"><div class="num">UAE & NYC</div><div class="label">HQ · Global Reach</div></div>
+  </div>
+  
+  <p>Get The Fit is an AI-powered fashion discovery marketplace — venture-backed by Antler, headquartered in UAE & NYC, serving customers globally. We bring the entire shopping journey into one place: from natural-language discovery to virtual try-on to multi-brand checkout.</p>
+  
+  <p>We curate emerging designers from Kuwait, India, UAE, Turkey, Brazil, and beyond — brands with extraordinary craftsmanship that deserve a global audience. HSW's fusion of architectural precision and refined femininity is exactly what our customers are searching for — and exactly what global womenswear is missing.</p>
+
+  <p><span class="bold">See it live:</span> <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a></p>
+
+  <h3 style="margin-top:24px;">Discover by Vibe</h3>
+  <p>Every brand has a dedicated page — their story, aesthetic, vibes, and full collection. Filterable by vibe and region.</p>
+  <p><span class="bold">HSW would surface under:</span> <span class="accent">Sexy Elegant, Unique Finds, Cool Girl, and Glam</span> — reaching customers who search by feeling, not category.</p>
+  
+  <h3 style="margin-top:32px;">Outfit Creator + Cross-Brand Styling</h3>
+  <p>Customers build complete outfits mixing pieces from different designers. Your HSW sculpted coat gets paired with another brand's slip dress — and both go into one cart. Your products get discovered by customers who came for another brand and leave with yours too.</p>
+  
+  <h3 style="margin-top:32px;">Shop the Look — Curated Outfit Pairings</h3>
+  <p>Editorial-to-commerce. Customers see a complete styled outfit, toggle items on or off, and add the whole look to their bag in one click. Your HSW pieces get styled alongside complementary brands — increasing average order value and cross-brand discovery.</p>
+
+  <h3 style="margin-top:32px;">Community Spotlight — Shoppable UGC</h3>
+  <p>Real looks from real customers. Every video and photo is shoppable — social proof that converts browsers into buyers. For HSW, this is especially powerful: architectural pieces live and die on how they look in motion, on real bodies. That's exactly what Spotlight delivers.</p>
+</div>
+
+<!-- PAGE 4: WHY HSW -->
+<div class="page">
+  <h3>The Fit</h3>
+  <h2>Why HSW Is a Perfect Partner</h2>
+  
+  <table>
+    <tr><th>HSW DNA</th><th>GTF Positioning</th><th>Why It Converts</th></tr>
+    <tr>
+      <td>Architectural femininity — structure without stiffness</td>
+      <td>AI indexes silhouette + construction as core ranking signals</td>
+      <td>"Structured but feminine" queries → HSW as the definitive answer</td>
+    </tr>
+    <tr>
+      <td>Kuwait-founded, Middle Eastern heritage</td>
+      <td>Cultural origin as a discovery attribute + trust signal</td>
+      <td>"Middle Eastern designer" and "Kuwait fashion" queries surface HSW — a category with almost zero competition online</td>
+    </tr>
+    <tr>
+      <td>Limited-edition production</td>
+      <td>Scarcity + exclusivity as conversion drivers</td>
+      <td>Customers who find HSW on GTF know they're getting something rare — drives urgency and premium perception</td>
+    </tr>
+    <tr>
+      <td>Prosthodontist-turned-designer founder</td>
+      <td>Founder story as a differentiation + trust signal</td>
+      <td>The precision-meets-fashion narrative is unforgettable — it's the kind of story that makes customers buy AND tell friends</td>
+    </tr>
+    <tr>
+      <td>Sculpted outerwear + statement evening pieces</td>
+      <td>Cross-category discovery across outerwear + eveningwear</td>
+      <td>A customer searching for a "dinner coat" discovers HSW; searching for "evening pieces" discovers HSW outerwear</td>
+    </tr>
+    <tr>
+      <td>Duties & taxes included at checkout</td>
+      <td>Frictionless international purchase — aligns perfectly with GTF's DDP model</td>
+      <td>HSW already thinks global-first. GTF provides the discovery layer that converts that thinking into actual global sales</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:24px;">HSW represents a category that barely exists in global fashion discovery: precision-engineered womenswear from the Middle East, made in limited editions, designed by someone who literally trained in millimetre accuracy. GTF was built to surface exactly this kind of brand — where the story, the craft, and the design philosophy are inseparable from the product.</p>
+</div>
+
+<!-- PAGE 5: PRICING OPPORTUNITY -->
+<div class="page">
+  <h3>The Opportunity</h3>
+  <h2>Your Positioning Is a Global Advantage</h2>
+
+  <p>Let's be direct: HSW sits in a price-and-positioning sweet spot that almost no other brand occupies. Here's the global landscape your customer is navigating:</p>
+
+  <table>
+    <tr><th>Brand</th><th>Statement Coat</th><th>Evening Piece</th><th>Positioning</th></tr>
+    <tr><td>Jacquemus</td><td>$1,500–$3,000</td><td>$800–$2,000</td><td>French architectural minimalism</td></tr>
+    <tr><td>Nanushka</td><td>$600–$1,200</td><td>$400–$800</td><td>Contemporary European</td></tr>
+    <tr><td>Cult Gaia</td><td>$500–$900</td><td>$350–$700</td><td>LA sculptural resort</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:600;">HSW</td><td style="color:#7C6AEF;font-weight:600;">Limited-edition pricing</td><td style="color:#7C6AEF;font-weight:600;">Limited-edition pricing</td><td style="color:#7C6AEF;">Kuwait architectural femininity — a category of one</td></tr>
+  </table>
+
+  <div class="price-note">
+    <p>HSW doesn't compete on price — it competes on <span style="color:#fff;font-weight:600;">irreplaceability</span>. The combination of Middle Eastern heritage, medical-grade precision, limited production, and architectural design creates a brand that has no direct competitor. GTF's AI understands that — and surfaces HSW for the customers who are searching for exactly this, even when they can't name it.</p>
+  </div>
+
+  <h3 style="margin-top:32px;">Global Logistics — We Handle the Complexity</h3>
+
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🌍 DDP Shipping</h4><p>Duties and taxes pre-calculated. One price for the customer — no surprise customs charges. DHL international delivery.</p></div>
+    <div class="tool-card"><h4>💱 Multi-Currency</h4><p>Prices displayed in customer's local currency (USD, GBP, AED, EUR, KWD). Powered by Zonos.</p></div>
+    <div class="tool-card"><h4>🛒 Unified Checkout</h4><p>Customer buys HSW + another brand in one cart, one payment. You only ship your items.</p></div>
+    <div class="tool-card"><h4>📦 You Ship from Kuwait</h4><p>No inventory transfer. Products stay with you. When an order comes in, you dispatch from your facility.</p></div>
+  </div>
+
+  <p>HSW already includes duties and taxes at checkout — that's forward-thinking. GTF extends that same frictionless experience to discovery, try-on, and cross-brand purchasing.</p>
+</div>
+
+<!-- PAGE 6: TOOLKIT -->
+<div class="page">
+  <h3>What You Get</h3>
+  <h2>The Complete GTF Toolkit for HSW</h2>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🔍 AI Discovery Engine</h4><p>14-attribute product indexing. Natural language + image search. Vibe, occasion, aesthetic, silhouette, and cultural origin matching.</p></div>
+    <div class="tool-card"><h4>🧪 Virtual Try-On</h4><p>On every product page. Customers see themselves in your pieces — especially powerful for structured silhouettes where fit is everything.</p></div>
+    <div class="tool-card"><h4>✨ Outfit Builder</h4><p>Cross-brand outfit creation with your pieces as hero items. Increases average order value and cross-brand discovery.</p></div>
+    <div class="tool-card"><h4>🎬 Shoppable UGC</h4><p>Real customer videos showing how architectural pieces look in motion — the social proof HSW deserves.</p></div>
+    <div class="tool-card"><h4>👗 Shop the Look</h4><p>Editorial-to-commerce. Full outfit styling with HSW as the anchor piece. One-click add-to-bag across brands.</p></div>
+    <div class="tool-card"><h4>📊 Brand Dashboard</h4><p>Real-time analytics: views, clicks, conversions, top queries leading to HSW, vibe performance, customer demand insights.</p></div>
+    <div class="tool-card"><h4>🌍 Global Logistics</h4><p>DHL + Zonos. Customs pre-calculated. DDP shipping — seamless international delivery from Kuwait to anywhere.</p></div>
+    <div class="tool-card"><h4>🏷 Brand Page</h4><p>Your story — the prosthodontist's precision, Kuwait heritage, architectural philosophy — premium brand experience with UGC gallery.</p></div>
+  </div>
+  
+  <p style="margin-top:16px;">Plus: <span class="bold">Brand Intelligence Reports</span> — monthly insights showing what customers search for, which products they save, and what vibes drive discovery. Data no other platform provides to emerging brands.</p>
+</div>
+
+<!-- PAGE 7: COMMISSION + CTA -->
+<div class="page">
+  <h3>Terms</h3>
+  <h2>Commission & Payout</h2>
+  
+  <div class="commission-box">
+    <div class="rate">35%</div>
+    <div class="sub">Performance-based. You pay zero if we don't sell.</div>
+  </div>
+  
+  <table>
+    <tr><th>Channel</th><th>Effective Cost</th><th>What You Get</th></tr>
+    <tr><td>Instagram/Meta Ads</td><td>25–35% of revenue</td><td>Impressions, maybe clicks. You pay even if nobody buys.</td></tr>
+    <tr><td>Influencer Marketing</td><td>15–40% per campaign</td><td>One-time exposure. Content expires.</td></tr>
+    <tr><td>Traditional Marketplace</td><td>30–45% + listing fees</td><td>Buried in 10,000 brands. Discount-driven. Your story disappears.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:600;">GTF (35%)</td><td style="color:#7C6AEF;font-weight:600;">35% — only on sales</td><td style="color:#7C6AEF;">AI discovery + virtual try-on + outfit builder + UGC + global logistics + analytics. Zero upfront cost.</td></tr>
+  </table>
+  
+  <div class="cta-box" style="margin-top:40px;">
+    <h2>Let's Connect</h2>
+    <p style="color:#888;">We're based in Dubai — a quick call or coffee to walk you through the full platform live and discuss how HSW fits into GTF's curated roster.</p>
+    <a href="https://calendly.com/atiqa-getthefit/30min">BOOK A 30-MIN CALL →</a>
+    <p style="font-size:12px;color:#999;margin-top:16px;">
+      🌐 <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a> · 
+      📸 <a href="https://www.instagram.com/getthefit.ai" style="color:#7C6AEF;">@getthefit.ai</a>
+    </p>
+    <p style="font-size:11px;color:#555;margin-top:12px;">Atiqa Rahman, Founder & CEO · Get The Fit · Antler-backed · Dubai & NYC</p>
+  </div>
+</div>
+
+</body>
+</html>

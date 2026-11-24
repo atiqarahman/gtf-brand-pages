@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get The Fit × 11 Tareng — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 60px 48px;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #7C6AEF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #bbb;
+    margin-bottom: 16px;
+  }
+
+  .accent { color: #7C6AEF; }
+  .bold { font-weight: 700; color: #fff; }
+  
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .cover .brand-x {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7C6AEF;
+    margin-bottom: 24px;
+  }
+
+  .cover h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+  }
+
+  .cover .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 40px;
+  }
+
+  .cover .hook {
+    font-size: 15px;
+    color: #999;
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+
+  .cover .footer {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .stat-box {
+    background: #151515;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-box .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .stat-box .label {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .query-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 12px;
+  }
+
+  .query-card .query {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .query-card .result {
+    font-size: 12px;
+    color: #888;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  th {
+    background: #7C6AEF;
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+  }
+
+  tr:nth-child(even) td { background: #111; }
+
+  .toolkit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .tool-card {
+    background: #151515;
+    border-left: 4px solid #7C6AEF;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+  }
+
+  .tool-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .tool-card p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+
+  .commission-box {
+    background: linear-gradient(135deg, #1a1040, #2a1a60);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+  }
+
+  .commission-box .rate {
+    font-size: 64px;
+    font-weight: 700;
+    color: #7C6AEF;
+  }
+
+  .commission-box .sub {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .cta-box {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #0a0a0a, #1a1040);
+    border-radius: 16px;
+    margin: 24px 0;
+  }
+
+  .cta-box a {
+    display: inline-block;
+    padding: 16px 48px;
+    background: #7C6AEF;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  .price-note {
+    background: #151515;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .price-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  @media print {
+    body { background: #0a0a0a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="brand-x">GET THE FIT × 11 TARENG</div>
+  <h1>Partnership Proposal</h1>
+  <div class="tagline">Manipuri Heritage. Contemporary Couture. Global Stage.</div>
+  <div class="hook">The platform where Khurkhul silk and Meitei craftsmanship meet AI-powered global fashion discovery.</div>
+  <div class="footer">PREPARED EXCLUSIVELY FOR 11 TARENG<br>By Atiqa Rahman, CEO — Get The Fit · November 2026</div>
+</div>
+
+<!-- PAGE 2: THE DISCOVERY GAP -->
+<div class="page">
+  <h3>The Problem</h3>
+  <h2>The Discovery Gap Your Customers Face</h2>
+  <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:24px;">A woman in Dubai is planning what to wear to a destination wedding in Udaipur. She wants something that honours Indian craft without looking like every other lehenga at the sangeet. She's scrolling Instagram and sees one of your Khurkhul silk pieces — the drape, the luminosity, the way the Meitei motifs sit against a modern silhouette. She wants it. She searches online. She gets Sabyasachi knockoffs and generic "Indian designer lehenga." She can't find you. That sale — and a customer who would have become a lifelong collector — is lost.</p>
+  
+  <p>11 Tareng is something the fashion world barely knows exists yet: a contemporary couture label born in Imphal, Manipur, founded in 2023 by Jayshree Koijam and Reena Ahanthem — two fashion professionals who decided that Manipur's living textile traditions deserve more than museum preservation. They deserve a global stage. At the heart of 11 Tareng is handwoven Khurkhul silk, traditionally associated with the dhoti and phanek, reimagined into corsetry, tailored jackets, fluid separates, and sculptural lehengas. Meitei motifs and intricate embroidery are woven into every design — not as decoration, but as cultural identity meeting contemporary precision.</p>
+  
+  <p style="color:#fff;font-weight:600;">Instagram builds your audience. It doesn't convert globally at scale. And traditional marketplaces can't communicate why a Khurkhul silk jacket from Imphal is different from a generic "embroidered Indian jacket" — they strip away the heritage, the craft, the story that makes the garment irreplaceable.</p>
+
+  <h3 style="margin-top:32px;">This Is How They Search on GTF</h3>
+
+  <div class="query-card">
+    <div class="query">"Handwoven silk outfit for a destination wedding — modern, not traditional"</div>
+    <div class="result">→ GTF AI: material = handwoven silk, occasion = wedding, vibe = Modern + Cultural, silhouette = contemporary → surfaces 11 Tareng lehengas and draped separates</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Indian couture that feels editorial, not bridal"</div>
+    <div class="result">→ GTF AI: origin = India, vibe = Editorial + Unique Finds, category = couture, keyword = non-bridal → surfaces 11 Tareng corsetry, tailored jackets, and fluid silhouettes</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Luxury silk co-ord set with actual craft behind it"</div>
+    <div class="result">→ GTF AI: material = silk, category = co-ord/set, quality = artisan/handwoven, price tier = luxury → surfaces 11 Tareng Khurkhul silk sets</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Northeast Indian designer — something nobody else will be wearing"</div>
+    <div class="result">→ GTF AI: origin = Northeast India/Manipur, vibe = Unique Finds + Statement, exclusivity = emerging designer → surfaces 11 Tareng as the definitive answer</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Sculptural drape dress with heritage textile — festive but not heavy"</div>
+    <div class="result">→ GTF AI: silhouette = draped/sculptural, material = heritage textile, occasion = festive, keyword = lightweight → surfaces 11 Tareng draped pieces and phanek-inspired forms</div>
+  </div>
+
+  <div class="query-card">
+    <div class="query">"Corset top with handwoven silk for a cocktail party"</div>
+    <div class="result">→ GTF AI: category = corset, material = handwoven silk, occasion = cocktail/party, vibe = Sexy Elegant → surfaces 11 Tareng corsetry pieces</div>
+  </div>
+
+  <p style="margin-top:16px;">No traditional marketplace can process these queries. They rely on category filters. GTF's AI understands intent, vibe, occasion, heritage, and design philosophy — and matches them to your product attributes.</p>
+</div>
+
+<!-- PAGE 3: THE PLATFORM -->
+<div class="page">
+  <h3>The Platform</h3>
+  <h2>The GTF Platform — Built for Discovery</h2>
+  
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">$60K+</div><div class="label">GMV in 3 months</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Curated brands</div></div>
+    <div class="stat-box"><div class="num">🚀</div><div class="label">Venture-backed (Antler)</div></div>
+    <div class="stat-box"><div class="num">UAE & NYC</div><div class="label">HQ · Global Reach</div></div>
+  </div>
+  
+  <p>Get The Fit is an AI-powered fashion discovery marketplace — venture-backed by Antler, headquartered in UAE & NYC, serving customers globally. We bring the entire shopping journey into one place: from natural-language discovery to virtual try-on to multi-brand checkout.</p>
+  
+  <p>We curate emerging designers from India, UAE, Kuwait, Turkey, Brazil, and beyond — brands with extraordinary craftsmanship that deserve a global audience. 11 Tareng's fusion of Manipuri textile heritage and contemporary couture is exactly what our customers are searching for — and exactly what global fashion is missing.</p>
+
+  <p><span class="bold">See it live:</span> <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a></p>
+
+  <h3 style="margin-top:24px;">Discover by Vibe</h3>
+  <p>Every brand has a dedicated page — their story, aesthetic, vibes, and full collection. Filterable by vibe and region.</p>
+  <p><span class="bold">11 Tareng would surface under:</span> <span class="accent">Unique Finds, Glam, Elegant, and Cultural Luxe</span> — reaching customers who search by feeling, not category.</p>
+  
+  <h3 style="margin-top:32px;">Outfit Creator + Cross-Brand Styling</h3>
+  <p>Customers build complete outfits mixing pieces from different designers. Your 11 Tareng Khurkhul silk jacket gets paired with another brand's trousers — and both go into one cart. Your products get discovered by customers who came for another brand and leave with yours too.</p>
+  
+  <h3 style="margin-top:32px;">Shop the Look — Curated Outfit Pairings</h3>
+  <p>Editorial-to-commerce. Customers see a complete styled outfit, toggle items on or off, and add the whole look to their bag in one click. Your 11 Tareng pieces get styled alongside complementary brands — increasing average order value and cross-brand discovery.</p>
+
+  <h3 style="margin-top:32px;">Community Spotlight — Shoppable UGC</h3>
+  <p>Real looks from real customers. Every video and photo is shoppable — social proof that converts browsers into buyers. For 11 Tareng, this is especially powerful: heritage textiles come alive when you see them move, drape, and catch light on real women. That's exactly what Spotlight delivers.</p>
+</div>
+
+<!-- PAGE 4: WHY 11 TARENG -->
+<div class="page">
+  <h3>The Fit</h3>
+  <h2>Why 11 Tareng Is a Perfect Partner</h2>
+  
+  <table>
+    <tr><th>11 Tareng DNA</th><th>GTF Positioning</th><th>Why It Converts</th></tr>
+    <tr>
+      <td>Handwoven Khurkhul silk — Manipur's living textile tradition</td>
+      <td>AI indexes material + heritage as core ranking signals</td>
+      <td>"Handwoven silk" and "artisan textile" queries → 11 Tareng as the definitive answer</td>
+    </tr>
+    <tr>
+      <td>Born in Imphal — Northeast India's first contemporary couture label</td>
+      <td>Cultural origin as a discovery attribute + trust signal</td>
+      <td>"Northeast Indian designer" and "Manipuri fashion" queries → a category with zero competition online</td>
+    </tr>
+    <tr>
+      <td>Phanek-inspired forms + modern corsetry and tailoring</td>
+      <td>Cross-category discovery across heritage + contemporary</td>
+      <td>A customer searching for "modern Indian corset" discovers 11 Tareng; searching for "heritage silk lehenga" discovers the same brand</td>
+    </tr>
+    <tr>
+      <td>Female-founded by two Manipuri fashion professionals</td>
+      <td>Founder story as differentiation + authenticity signal</td>
+      <td>Reena (creative vision) + Jayshree (colour/style strategy) = a story that makes customers buy AND tell friends</td>
+    </tr>
+    <tr>
+      <td>Source Fashion 2027 exhibitor — global-ready</td>
+      <td>International trade credibility</td>
+      <td>Source Fashion validation signals serious global intent — GTF provides the discovery layer to convert that into actual global sales</td>
+    </tr>
+    <tr>
+      <td>Meitei motifs + sculptural draping + layered textures</td>
+      <td>Multi-attribute search matching</td>
+      <td>"Sculptural drape" and "embroidered silk" and "textured luxury" all surface the same brand from different customer intents</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:24px;">11 Tareng represents something the global fashion market has never properly had access to: Manipur's textile heritage — Khurkhul silk, Meitei motifs, phanek silhouettes — reimagined through contemporary couture by the women who grew up with it. GTF was built to surface exactly this kind of brand — where the story, the craft, and the cultural identity are inseparable from the product.</p>
+</div>
+
+<!-- PAGE 5: PRICING OPPORTUNITY -->
+<div class="page">
+  <h3>The Opportunity</h3>
+  <h2>Your Heritage Is a Global Advantage</h2>
+
+  <p>Let's be direct: 11 Tareng occupies a positioning sweet spot that almost no other brand can claim. Here's the global landscape your customer is navigating:</p>
+
+  <table>
+    <tr><th>Brand</th><th>Heritage Textile Piece</th><th>Contemporary Couture Set</th><th>Positioning</th></tr>
+    <tr><td>Sabyasachi</td><td>₹2,00,000+</td><td>₹3,00,000+</td><td>Established Indian bridal couture</td></tr>
+    <tr><td>Anamika Khanna</td><td>₹1,50,000+</td><td>₹2,00,000+</td><td>Contemporary Indian draped couture</td></tr>
+    <tr><td>Rahul Mishra</td><td>₹1,00,000+</td><td>₹1,50,000+</td><td>Craft-forward haute couture</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:600;">11 Tareng</td><td style="color:#7C6AEF;font-weight:600;">Emerging luxury pricing</td><td style="color:#7C6AEF;font-weight:600;">Emerging luxury pricing</td><td style="color:#7C6AEF;">Manipuri heritage couture — a category of one</td></tr>
+  </table>
+
+  <div class="price-note">
+    <p>11 Tareng doesn't compete with Sabyasachi or Anamika Khanna — it offers something they <span style="color:#fff;font-weight:600;">literally cannot</span>: authentic Manipuri Khurkhul silk, Meitei cultural motifs, and phanek-inspired silhouettes crafted by artisans from the Imphal Valley. No amount of money can replicate a living textile tradition. GTF's AI understands that — and surfaces 11 Tareng for the customers who want exactly this, even when they can't name it.</p>
+  </div>
+
+  <h3 style="margin-top:32px;">Global Logistics — We Handle the Complexity</h3>
+
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🌍 DDP Shipping</h4><p>Duties and taxes pre-calculated. One price for the customer — no surprise customs charges. DHL international delivery.</p></div>
+    <div class="tool-card"><h4>💱 Multi-Currency</h4><p>Prices displayed in customer's local currency (USD, GBP, AED, EUR). Powered by Zonos.</p></div>
+    <div class="tool-card"><h4>🛒 Unified Checkout</h4><p>Customer buys 11 Tareng + another brand in one cart, one payment. You only ship your items.</p></div>
+    <div class="tool-card"><h4>📦 You Ship from India</h4><p>No inventory transfer. Products stay with you in Imphal. When an order comes in, you dispatch from your facility.</p></div>
+  </div>
+</div>
+
+<!-- PAGE 6: TOOLKIT -->
+<div class="page">
+  <h3>What You Get</h3>
+  <h2>The Complete GTF Toolkit for 11 Tareng</h2>
+  
+  <div class="toolkit-grid">
+    <div class="tool-card"><h4>🔍 AI Discovery Engine</h4><p>14-attribute product indexing. Natural language + image search. Vibe, occasion, aesthetic, material, heritage origin, and silhouette matching.</p></div>
+    <div class="tool-card"><h4>🧪 Virtual Try-On</h4><p>On every product page. Customers see themselves in your Khurkhul silk pieces — especially powerful for draped silhouettes where movement matters.</p></div>
+    <div class="tool-card"><h4>✨ Outfit Builder</h4><p>Cross-brand outfit creation with your pieces as hero items. Increases average order value and cross-brand discovery.</p></div>
+    <div class="tool-card"><h4>🎬 Shoppable UGC</h4><p>Real customer videos showing how heritage textiles drape and move on real bodies — the social proof 11 Tareng's craft deserves.</p></div>
+    <div class="tool-card"><h4>👗 Shop the Look</h4><p>Editorial-to-commerce. Full outfit styling with 11 Tareng as the anchor piece. One-click add-to-bag across brands.</p></div>
+    <div class="tool-card"><h4>📊 Brand Dashboard</h4><p>Real-time analytics: views, clicks, conversions, top queries leading to 11 Tareng, vibe performance, and customer demand insights.</p></div>
+    <div class="tool-card"><h4>🌍 Global Logistics</h4><p>DHL + Zonos. Customs pre-calculated. DDP shipping — seamless international delivery from Imphal to anywhere in the world.</p></div>
+    <div class="tool-card"><h4>🏷 Brand Page</h4><p>Your story — Imphal Valley roots, Khurkhul silk, Reena & Jayshree's vision, Meitei heritage — premium brand experience with UGC gallery.</p></div>
+  </div>
+  
+  <p style="margin-top:16px;">Plus: <span class="bold">Brand Intelligence Reports</span> — monthly insights showing what customers search for, which products they save, and what vibes drive discovery. Data no other platform provides to emerging brands.</p>
+</div>
+
+<!-- PAGE 7: COMMISSION + CTA -->
+<div class="page">
+  <h3>Terms</h3>
+  <h2>Commission & Payout</h2>
+  
+  <div class="commission-box">
+    <div class="rate">40%</div>
+    <div class="sub">Performance-based. You pay zero if we don't sell.</div>
+  </div>
+  
+  <table>
+    <tr><th>Channel</th><th>Effective Cost</th><th>What You Get</th></tr>
+    <tr><td>Instagram/Meta Ads</td><td>25–35% of revenue</td><td>Impressions, maybe clicks. You pay even if nobody buys.</td></tr>
+    <tr><td>Influencer Marketing</td><td>15–40% per campaign</td><td>One-time exposure. Content expires.</td></tr>
+    <tr><td>Traditional Marketplace</td><td>30–45% + listing fees</td><td>Buried in 10,000 brands. Discount-driven. Your story disappears.</td></tr>
+    <tr><td style="color:#7C6AEF;font-weight:600;">GTF (40%)</td><td style="color:#7C6AEF;font-weight:600;">40% — only on sales</td><td style="color:#7C6AEF;">AI discovery + virtual try-on + outfit builder + UGC + global logistics + analytics. Zero upfront cost.</td></tr>
+  </table>
+  
+  <div class="cta-box" style="margin-top:40px;">
+    <h2>Let's Build This Together</h2>
+    <p style="color:#888;">11 Tareng is making Manipur's textile heritage globally relevant. GTF is built to take brands like yours to the world. Let's talk about how we make this happen.</p>
+    <a href="https://calendly.com/atiqa-getthefit/30min">BOOK A 30-MIN CALL →</a>
+    <p style="font-size:12px;color:#999;margin-top:16px;">
+      🌐 <a href="https://dev.getthefit.ai" style="color:#7C6AEF;">dev.getthefit.ai</a> · 
+      📸 <a href="https://www.instagram.com/getthefit.ai" style="color:#7C6AEF;">@getthefit.ai</a>
+    </p>
+    <p style="font-size:11px;color:#555;margin-top:12px;">Atiqa Rahman, Founder & CEO · Get The Fit · Antler-backed · Dubai & NYC</p>
+  </div>
+</div>
+
+</body>
+</html>
